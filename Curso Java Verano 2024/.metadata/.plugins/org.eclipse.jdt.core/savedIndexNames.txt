@@ -1,0 +1,6 @@
+INDEX VERSION 1.134+C:\Users\yakit\Desktop\Repaso_Java_Verano-2024\.metadata\.plugins\org.eclipse.jdt.core
+1285851014.index
+3894042559.index
+1706283411.index
+1865797976.index
+2181823636.index
