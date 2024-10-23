@@ -1,0 +1,52 @@
+package EscrituraYLectura;
+
+import java.io.*;
+
+public class EjercicioEscritura {
+
+	private static void escribirFichero(String ruta, String frase) {
+
+		try {
+			FileWriter fw = new FileWriter(ruta);
+
+			fw.write(frase);
+			
+			fw.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	private static void leerFichero(String ruta) {
+
+		String linea = "";
+
+		try {
+			BufferedReader bf = new BufferedReader(new FileReader(ruta));
+
+			while ((linea = bf.readLine()) != null) {
+
+				System.out.println(linea);
+			}
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	public static void main(String[] args) {
+
+		String frase = "Esto es una frase que voy a escribir en un fichero";
+		String ruta = "src/EscrituraYLectura/frase.txt";
+
+		escribirFichero(ruta, frase);
+		leerFichero(ruta);
+	}
+
+}
