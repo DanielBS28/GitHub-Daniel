@@ -1,0 +1,33 @@
+h1{
+    color: cadetblue;
+}
+
+/*
+Este color se aplica a los links que aún no hayamos visitado */
+a:link{
+
+    color: green;
+
+    /*Texto decoration none sirve para quitar el subrayado de un link*/
+    text-decoration: none;
+}
+
+/*
+Este color se aplica a los links que hayamos visitado */
+a:visited{
+    color: aqua;
+    text-decoration: underline;
+}
+
+/*
+Este color se aplica a los links cuando pasamos por encima el ratón */
+a:hover{
+    color: orange;
+    text-decoration: underline;
+}
+
+/*
+Este color se aplica a los links cuando damos click al link o mantemeos apretado el link*/
+a:active{
+    color: red;
+}

@@ -1,0 +1,29 @@
+table, th, td {
+
+    /*Por defecto los th se van a poner en negrita y en el centro, mientras que los td no (si no aplicamos estilos)*/
+    border: 1px solid black;
+
+    /*Las tablas tienen un borde raro, para quitarlo usamos border-collapse: collapse;*/
+    border-collapse: collapse;
+
+    /*Otro método para quitar esos bordes es usar border-spacing: 5px; pero queda mejor el de arriba
+    border-spacing: 5px;*/
+
+    padding: 5px;
+}
+td{
+    text-align: center;
+}
+
+table{
+
+    /*Esto ajusta el ancho de la tabla a toda la pantalla*/
+    width: 100%;
+}
+
+/*
+th{
+Podría mover el texto a la izquierda de los td si lo necesito
+    text-align: left;
+}
+*/

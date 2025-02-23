@@ -1,0 +1,23 @@
+h1{
+    color: chartreuse;
+}
+
+/*Si ponemos comas entre varios elementos, los estilos se aplicarán a ambos elementos*/
+a:link, a:visited{
+
+    /*Estos son los estilos del botón*/
+    background-color: aquamarine;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+
+    /*Esto sirve para que no se solapen los botones*/
+    display: inline-block;
+
+}
+
+a:hover, a:active{
+
+    background-color: royalblue;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!--Hemos visto como cambiar estilos individuales pero ahora veremos como
+         aplicarlos a varios a la vez con style-->
+
+<!-- 
+
+     Esto se aplica a toda la página web se pone la etiqueta entre {} con los estilos que queramos
+         <style>
+            h1{
+                color: blue;
+            }
+            p{
+                color: white;
+                background-color: crimson;
+            }
+         </style>
+
+         Si lo ponemos así funciona, pero lo correcto es crear un archivo aparte CSS, y habrá que enlazarlo con 
+         este archivo HTML, se hace con la etiqueta link que vemos abajo, podemos tener varios archivos con 
+         la misma hoja de estilos CSS, es una gran ventaja
+-->
+         <link rel="stylesheet" href="CSS/Estilos.css"/>
+</head>
+<body>
+    <h1>Página de Daniel</h1>
+    <p>Esto es un párrafo</p>
+    <p>Esto es otro párrafo</p>
+    <a href="página2Intro.html">Esto es otra web con los mismos estilos CSS</a>
+</body>
+</html>

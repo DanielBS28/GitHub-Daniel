@@ -1,0 +1,14 @@
+h1{
+    color: blue;
+}
+p{
+    color: white;
+    background-color: crimson;
+    padding: 15px;
+    border: 10px solid blue;
+    margin: 50px;
+
+    /*
+    Padding define el espacio que rodea el contenido dentro de un elemento web. El margin controla la distancia entre los elementos separados en la página. Padding establece la distancia entre el contenido y los bordes del elemento que lo contiene.*/
+
+}

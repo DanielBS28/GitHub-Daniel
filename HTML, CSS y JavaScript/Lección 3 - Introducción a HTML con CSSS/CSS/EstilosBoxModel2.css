@@ -1,0 +1,34 @@
+h1{
+    color: blue;
+}
+p{
+    color: white;
+    background-color: crimson;
+    padding: 15px;
+    border: 10px solid blue;
+
+    /*
+    margin-top: 40px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 100px;
+
+    Esto es lo mismo que esto que vemos aquí abajo
+    margin: 40px 10px 10px 100px;
+
+    */
+    /*Esto centra los parrafos al medio y deja 50 px de margin a la izquierda y derecha*/
+    margin: auto 50px;
+    /*Esto centra el texto*/
+    text-align: center;
+
+/*
+    margin: 40px 10px 100px;  40px de margin top, 10 px de margin right y left y 100px de margin bottom
+
+    margin: 40px 100px;  40px de margin top y bottom, 100 px de margin right y left
+
+*/
+    /*
+    Padding define el espacio que rodea el contenido dentro de un elemento web. El margin controla la distancia entre los elementos separados en la página. Padding establece la distancia entre el contenido y los bordes del elemento que lo contiene.*/
+
+}

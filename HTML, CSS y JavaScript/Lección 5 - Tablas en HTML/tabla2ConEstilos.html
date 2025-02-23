@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/estilosTabla2.css">
+
+    <!--Esto sirve para aplicar la fuente Trocchi al caption de la tabla (mirar caption en el CSS)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Trocchi&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Tablas en HTML</h1>
+
+    <!--Cramos una tabla con la etiqueta table, la etiqueta de table sola no vemos nada, hay que añadir etiquetas dentro,  <table border="1"> sirve para darle bordes a todas las celdas de la tabla, lo voy a quitar ya que 
+        voy a aplicar estilos CSS en la hoja de estilos como mejor práctica. No es necesario poner tbody dentro de tabla aunque si usamos el inspector aparece-->
+    <table>
+        <!--Caption es el título de la tabla-->
+        <caption>Listado de personas</caption>
+
+        <tr> <!--tr table row crea una fila y dentro de esta fila hay tres elementos table head th que son
+            las cabeceras de la tabla-->
+
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Email</th>
+        </tr>
+        <tr><!--Creamos otra fila para añadir datos con los td, td significa table data-->
+            <td>Juan</td>
+            <td>Sánchez</td>
+            <td>correodeprueba@gmail.com</td>
+        </tr>
+        <tr>
+            <td>Daniel</td>
+            <td>Sánchez</td>
+            <td>correodeprueba2@gmail.com</td>
+        </tr>
+        <tr>
+            <td>Asela</td>
+            <td>Sánchez</td>
+            <td>correodeprueba3@gmail.com</td>
+        </tr>
+        <tr>
+            <td>Ricardo</td>
+            <td>Sánchez</td>
+            <td>correodeprueba4@gmail.com</td>
+        </tr>
+    </table>
+</body>
+</html>
