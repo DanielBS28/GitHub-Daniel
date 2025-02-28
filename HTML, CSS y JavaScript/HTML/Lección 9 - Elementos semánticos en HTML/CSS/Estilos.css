@@ -1,0 +1,62 @@
+/*Debido a que no estamos usando divs ya no hace falta crear clases con . usamos las etiquetas semánticas*/
+
+header{
+    /*Pongo de color rosa las letras y centro el texto en medio dentro del header*/
+    color: #f72585;
+    text-align: center;
+}
+
+nav{
+
+    /*El nav va a estar pegado a la izquierda y va a ocupar un 20% del ancho disponible*/
+    width: 20%;
+    float: left;
+}
+nav a{
+
+    /*Los elementos de tipo ancla van a tener un border radius (redondo) de 10px arriba izquierda, 0 en la lado sup derecha, abajo derecha 10px y  0 lado inferior izquierda  */
+    border-radius: 10px 0 10px 0;
+    background-color:#f71580;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    /*Esto es para quitar el subrayado*/
+    text-decoration: none;
+    /*Esto es para poner los links como bloques uno debajo del otro por que los a por defecto con inline*/
+    display: block;
+}
+section{
+    /*Las secciones van a estar pegadas a la derecha y van a ocupar un 75% del ancho disponible*/
+    width: 75%;
+    float: right;
+    color: #7209b7;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 15px;
+    box-shadow: 1px 0 4px rgb(0, 0,0,0.2);
+
+}
+
+/*Los efectos CSS se verán a mas profundidad en los temas de CSS*/
+aside{
+
+    float: right;
+    width: 30%;
+    padding: 5px;
+    margin: 5px;
+    font-style: italic;
+    color: #4361ee;
+    box-shadow: inset 5px 0 5px -5px #4895ef;
+}
+footer{
+
+    /*Esto sirve para que no permitamos tener elementos flotantes a la izquierda  y derecha*/
+    clear: both;
+    padding: 1px;
+    text-align: center;
+}
+
+footer a{
+    text-decoration: none;
+}
+

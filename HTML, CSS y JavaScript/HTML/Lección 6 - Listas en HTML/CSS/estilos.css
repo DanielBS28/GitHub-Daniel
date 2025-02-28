@@ -1,0 +1,44 @@
+ol{
+
+    /*Con esto no tendrá tipo de lista la lista ordenada, es decir que no tenga números, letras, números
+    romanos etc.*/
+    list-style: none;
+
+    /*Cada vez que tenga una lista ol el contador (nombre de la variable
+      que aparece en curso (1,2,3...)se va a resetear a 0*/
+    counter-reset: contador;
+
+}
+
+ol li {
+        /* Por cada elemento de la lista la variable contador se va a incrementar en uno*/
+    counter-increment: contador;
+}
+
+    /*Esto es un selector que significa que en las listas ordenadas el elemento li con ::before que significa antes
+    va a tener los estilos que pongamos*/
+ol li::before{
+
+        /*En este caso va a tener el atributo content que es para poner texto antes (por que usamos ::before)
+        del elemento li, en este caso va a poner curso*/
+
+            /*El atributo counter muestra el número de la variable contador (será un número)*/
+
+                /*') ' esto sirve para poner esa cadena de texto después del contador y que quede más bonito*/
+
+
+    content: 'Curso ' counter(contador) ') ';
+
+    /*Esto sirve para poner el color azul al texto que está antes (::before) en este caso Curso Número ) */
+    color: blue;
+
+}
+    /*Esto es un selector que significa que en las listas ordenadas el elemento li con ::after que significa después
+    va a tener los estilos que pongamos*/
+
+ol li::after{
+
+     /*En este caso va a tener el atributo content que es para poner texto después (por que usamos ::after)
+        del elemento li, en este caso va a poner un punto*/
+    content: '.';
+}

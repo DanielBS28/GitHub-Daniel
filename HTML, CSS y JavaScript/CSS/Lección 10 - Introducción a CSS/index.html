@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a HTML</title>
+
+    <!--Los estilos se pueden poner en tres sitios, con un link a un CSS, con la etiqueta en head style o un elemento
+    inline CSS dentro de la etiqueta-->
+
+    <!--IMPORTANTE: AQUI VA A TENER PRIORIDAD LA ETIQUETA STYLE ANTES QUE EL LINK DEBIDO A QUE STYLE ESTÁ MAS ABAJO,
+    LINK TENDRÁ MENOS PRIORIDAD AL ESTAR MAS ARRIBA, EL QUE ESTÁ MÁSS ABAJO TIENE PRIORIDAD-->
+    <link rel="stylesheet" href="CSS/Estilos.css">
+    <!--Estilos CSS por link a un archivo CSS-->
+
+    <!--Los estilos también se pueden poner aquí-->
+    <style>
+        h2{
+            text-align: center;
+            color: blue;
+            font-size: 30px;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <!--HTML es el "esqueleto de la web" mientras que CSS es lo que permite dar formato a las etiquetas HTML-->
+
+    <!--Se pueden añadir estilos en las etiquetas o en un archivo aparte de CSS, se pone
+    la etiqueta style y los atributos separados ; (propiedad es lo mismo que atributo de css)
+    
+    Poner estilos en la etiqueta se conoce como inline CSS, pero si queremos añadir estos atributos a otros
+    h1 lo tendría que copiar y pegar a mano pero para eso ya existe la etiqueta style en head o un archivo CSS,
+    los elementos inline CSS tienen la mayor prioridad en las etiquetas-->
+    <h1 style="color: aquamarine; text-align: center; font-size: 100px;">Introducción a CSS</h1>
+    <h2>Esto es un H2</h2>
+    <h2>Esto es otro H2</h2>
+    <!--Al ser inline CSS se aplican estos estilos-->
+    <h2 style="color: brown; text-align: end; font-size: 100px;">Esto es otro H2</h2>
+    <h3>Esto es un h3 con estilos en un archivo CSS</h3>
+
+</body>
+</html>

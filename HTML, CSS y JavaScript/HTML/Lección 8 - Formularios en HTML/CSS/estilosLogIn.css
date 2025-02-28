@@ -1,0 +1,89 @@
+html{
+
+    /*Esto sirve para poner el ancho el 100% de la web*/
+    height: 100%;
+    width: 100%;
+}
+
+body{
+
+    /*Esto sirve para quitar el padding y margin inicial*/
+    margin: 0;
+    padding: 0;
+    /*Esto sirve para añadir un fondo con un degradado lineal de manera vertical, veremos más en el curso de CSS*/
+    background: linear-gradient(#7209b7, #3f37c0);
+}
+
+.contenedor{
+    /*Esto sirve para poner de margin de alto y abajo 50px y a los lados al poner auto se pondrá en el medio*/
+    margin: 50px auto;
+    /*Para que se centre le tenemos que dar al contenedor un valor de ancho*/
+    width: 400px;
+    padding: 30px;
+
+    /*Esto sirve para aprovechar que tenemos un degradado que el fondo del formulario también se pueda ver un poco 
+    de este degradado ya que pusimos en la a de rgba 0.5*/
+    background: rgba(0, 0, 0, 0.5);
+    /*Esto sirve para que se redondee el borde del contenedor y se crea un efecto mas profesional*/
+    border-radius: 10px;
+}
+
+/*Solo se aplicará a los h2 que estén dentro de la clase contenedor pero no a cualquier h2 de la web*/
+.contenedor h2{
+    /*arriba, derecha e izquierda van a tener 0 de margin, mientras que abajo va a tener 30px*/
+    margin: 0 0 30px;
+    /*Quitamos el padding*/
+    padding: 0;
+    /*Ponemos el tamaño de la fuente a 30px*/
+    font-size: 30px;
+    color: #4cc9f0;
+    text-align: center;
+}
+
+/*Esto se aplicará a todos los elementos label que estén dentro de una clase elemento que estén dentro de una clase contenedor*/
+.contenedor .elemento label{
+/*cambiar el color de la la letra a blanco*/
+    color: white;
+}
+
+/*Esto se aplicará a todos los elementos input que estén dentro de una clase elemento que estén dentro de una clase contenedor*/
+.contenedor .elemento input{
+
+    /*Esto es para que el ancho del la etiqueta (caja blanca del input) ocupe el 100% del ancho*/
+    width: 100%;
+        /*Esto es para que se agrande la caja blanca del input*/
+    padding: 10px 0;
+        /*Esto es para cambiar las letras a blanco*/
+    color: white;
+        /*Esto es para quitar el color blanco de la caja y que quede transparante*/
+    background: transparent;
+        /*Esto es para quitar el borde a la caja*/
+    border: none;
+        /*Esto es para añadir un borde blanco a la parte de abajo de la caja*/
+    border-bottom: 1px solid white;
+        /*Esto es para añadir un margen abajo en cada caja*/
+    margin-bottom: 30px;
+
+}
+
+/*Esto se aplicará a todos los elementos input y que sean de type="submit" que estén dentro de una clase elemento que estén dentro de una clase contenedor*/
+.contenedor .elemento input[type="submit"]{
+
+    /*Esto es para ponerle un fondo al botón del login*/
+    background-color: #f72585;
+    /*Esto es para quitarle todos los bordes al botón*/
+    border: none;
+        /*Esto es para añadir espaciado entre letras*/
+    letter-spacing: 5px;
+        /*Esto es para convertir el texto a mayúsculas*/
+    text-transform: uppercase;
+        /*Esto es para que cuando el ratón esté encima se pongo como una "manita"*/
+    cursor: pointer;
+        /*Esto es para agrandar el tamaño del botón*/
+    padding: 15px;
+        /*Esto es para añadir margen arriba del botón*/
+    margin-top: 30px;
+}
+
+
+

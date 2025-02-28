@@ -1,0 +1,31 @@
+*{
+    /*Se va a aplicar a todos los elementos de la página HTML*/
+    margin: 0;
+    padding: 0;
+}
+
+#Titulo_principal{
+
+    /*Esto solo se va a aplicar al elemento con ID Titulo_principal, a diferencia de las clases que se ponen 
+    con un .NombreClase, los ID en CSS se ponen con #NombreDeLaClase*/
+    color: aqua;
+    background-color: beige;
+    border: solid 5px orange;
+
+    /*Aunque antes con el asterisco habíamos puesto que todos los elementos tengan como padding y margin 0,
+    puedo modificar estos valores si quiero dentro del elemento que quiera modificar estos valores, se sobreescribe
+    al ser un elemento mas interno los estilos, el * es más externo.*/
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.Otros_titulos{
+
+    /*Esto se va a aplicar a todos los elementos que tengan estén dentro de la clase Otros_titulos*/
+    color: cadetblue;
+    background-color: yellowgreen;
+    border: 10px solid yellow;
+    margin-bottom: 10px;
+
+}

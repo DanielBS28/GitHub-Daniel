@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mas elementos de formulario</h1>
+    <form>
+        <fieldset> <!--Fieldset sirve para darle un borde a todo el formulario, la etiqueta debe de cerrarse antes de casi al final, es decir antes de </form>-->
+
+            <!--Legend es una etiqueta que permite añadir un título al formulario -->
+            <legend>Datos persona:</legend>
+            
+            <!--En la queryString si la observamos con el método GET vemos que el espacio se ha convertido en un +
+            si ponemos un nombre que tenga un espacio-->
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre"><br>
+
+            <!--Esto son campos para un email, que solo permite emails válidos-->
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email"><br>
+            <!--En la queryString si la observamos con el método GET vemos que el @ se ha formateado con %40,
+            esto es por que se codifican los caracteres especiales HTML URL enconding con UTF-8-->
+
+            <!--El input number sirve solo para poner números, si no dará un error-->
+            <label for="edad">Edad:</label>
+            <!--El atributo step="any" es opcional y sirve para también poder añadir valores decimales al campo, ya que 
+            por defecto solo permite números enteros si no se pone nada-->
+            <input type="number" name="edad" id="edad" step="any"><br>
+
+            <!--
+            name: Agrupa los botones de radio para que solo se pueda seleccionar uno (genero).
+        id: Identifica de manera única cada input y permite vincularlo con su label.
+        value: Define el valor que se enviará en el formulario cuando se seleccione ese botón.-->
+            <label>Género</label><br>
+            <input type="radio" name="genero" id="femenino" value="Femenino">
+            <label for="femenino">Femenino</label><br>
+
+            <input type="radio" name="genero" id="masculino" value="Masculino">
+            <label for="masculino">Masculino</label><br>
+
+            <!--A diferencia de los radio, los checkbox me permiten seleccionar varias opciones a la vez,
+            el name sirve para crear el grupo de elementos de música, luego me permitirá tener un array de canciones
+            con JavaScript (si solo he seleccionado una no habrá array) y procesar la información en el servidor, el id sirve para el label, y el value es el valor que se envia al servidor.-->
+            <label>Canción favorita</label><br>
+            <input type="checkbox" name="musica" id="betheone" value="Be the One">
+            <label for="betheone">Be The One</label><br>
+            <input type="checkbox" name="musica" id="levitating" value="Levitating">
+            <label for="levitating">Levitating</label><br>
+
+            <!--El elemento HTML select sirve para desplegar una lista de opciones, el label es para que cuando
+            pulse ese label me ponga en el select-->
+            <label for="autos">Marca auto favorita</label>
+            <select name="autos" id="autos">
+                <!--Los value es lo que se va a enviar al servidor, mientras que el texto dentro de option
+                solo sirve para visualizarse. Podemos tener dentro del select todas las opciones que queramos, pero 
+                solo se pueda elegir una. (A no ser que pongamos en la etiqueta label lo siguiente:  multiple="true
+                que con CTRL nos permitirá seleccionar varias opciones para enviar al servidor, si activo esto es
+                muy parecido a los checkboxes que me lo guardará como un array)-->
+                <option value="Suzuki">Suzuki</option>
+                <option value="Fiat">Fiat</option>
+                <!--Con selected="true" se selecciona por defecto al cargar la página esta opción en el select-->
+                <option value="Audi" selected="true">Audi</option>
+            </select><br>
+
+            <!--Con text area podemos capturar texto por parte del usuario
+            
+            El label tiene la misma función que en otros elementos, cuando pulsemos se vincula el for con el ID-->
+            <label for="Comentario">Comentario</label>
+            <!--El text area le podemos poner rows y cols que queramos, y el name es lo que se envia al servidor
+            pero el contenido es todo lo que este dentro del text area que escriba el usuario, podemos poner texto 
+            de maner inicial si queremos dentro de la etiqueta text area.-->
+            <textarea name="Comentario" id="Comentario" rows="2" cols="30"></textarea>
+
+            <input type="submit" value="Enviar">
+    </fieldset>
+    </form>
+</body>
+</html>

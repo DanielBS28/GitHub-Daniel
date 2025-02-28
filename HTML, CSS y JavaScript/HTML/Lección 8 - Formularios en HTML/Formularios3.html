@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios 3</title>
+</head>
+<body>
+    <h1>Formularios 3</h1>
+
+    <!--La URL que va a procesar la información se pone en la etiqueta form, concretamente
+    action="" en los "" tenemos que poner la dirección del servidor donde se procesará la información-->
+
+    <!--El parámetro target por defecto usa _self que siginica que muestra la respuesta de enviar el formulario
+    en la misma ventana, sin embargo con target en _blank mostrará el resultado de enviar el resultado en 
+    otra página en blanco-->
+
+    <!--El parámetro autocomplete con "off" sirve para que el nevegador no me de opción a autocompletar campos
+    del formulario cuando se pulsa encima de ellos, si esto está off no aparecerá nada-->
+    <form action="miservidor" target="_blank" autocomplete="off">
+        <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre"><br>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email"><br>
+
+            <!--El atributo readonly="true" sirve para que no se pueda modificar el campo, si tiene un valor
+            no se va a poder modificar, muy útil para cuando queramos que el usuario no toque el valor
+            de ese campo, si se envia al servidor no como el atributo que vemos abajo.
+            
+            también tenemos el atributo disabled="true" sirve para que no se pueda pulsar sobre el elemento
+            y tampoco se enviará al servidor si esta como disabled true.-->
+            <label for="idPersona">Persona</label>
+            <input type="text" id="idPersona" name="idPersona" readonly="true" value="100" disabled="true"><br>
+
+            <!--Podemos enviar información oculta al servidor, sin que aparezca en el formulario,
+            esta utilidad la veremos cuando lleguemos a JavaScript-->
+            <input type="hidden" name="sistema" id="sistema" value="SAP">
+
+            <!--El input type="reset" sirve para resetear los valores de un formulario si pulsamos ese botón,
+            es decir se borrarán los datos que había en los campos de los formularios-->
+            <input type="reset" value="Resetear">
+            <input type="submit" value="Enviar">
+    </form>
+    
+</body>
+</html>

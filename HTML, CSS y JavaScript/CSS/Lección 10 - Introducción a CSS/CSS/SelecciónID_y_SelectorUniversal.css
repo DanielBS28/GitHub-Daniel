@@ -1,0 +1,19 @@
+/*Este es el selector universal, siginifca todo. Cualquier estilo que pongamos aquí afectará a todos 
+los elementos de nuestra página web*/
+*{
+
+    /*Se aplicarán todos los estilos que pongamo aquí a las etiquetas HTML de nuestra web, excepto si luego
+    modificamos elementos concretos esos valores que hemos puesto aquí*/
+background-color: aquamarine;
+text-align: center;
+color: blue;
+font-size: 50px;
+}
+
+
+/*Esto es un selector por ID, solamente va a afectar a un único elemento que tenga ese ID, la sintaxis es #nombreID*/
+#titulo{
+color: crimson;
+text-align: center;
+
+}

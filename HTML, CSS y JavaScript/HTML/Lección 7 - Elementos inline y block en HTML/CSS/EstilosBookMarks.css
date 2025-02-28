@@ -1,0 +1,46 @@
+h1{
+    color: blue;
+    text-align: center;
+}
+h2{
+    color: aquamarine;
+}
+
+p{
+    color: chartreuse;
+}
+
+
+
+/*Un div abarca todo el ancho de la pantalla (todos los elementos de bloque lo hacen igual)*/
+
+/*Una clase permite modificar varios elementos a la vez que pertenezcan a una clase, esto es útil para cuando no 
+queramos aplicar todos los estilos a todos los div y solo a unos pocos, esos pocos los metemos dentro de la clase 
+y los estilos se aplicarán a los que pertenezcan a esa clase. Se representa con un .NombreClase y hay que ponerlo
+en el HTML en los elementos que queramos.*/
+.tarjeta{
+    /*Ponemos un borde a toda la clase*/
+    border: 10px solid black;
+    /*Ponemos un fondo a toda la clase*/
+    background-color: beige;
+    /*Todos los elementos que estén dentro de la clase van a tener el texto alineado al centro*/
+    text-align: center;
+
+    margin: 150px 100px;
+    /*Un padding para que se vea "mas relleno", en el inspector del navegador puedo cambiar estos valores
+    de manera temporal para ver que cambios realiza, para ello selecciono el padding en el inspector y con las flechas
+    del teclado pruebo los cambios*/
+    padding: 15px;
+}
+
+/*Esto se aplicará a la clase cabecera, vemos que tiene un margin de 15 px que se aplica correctamente*/
+.Cabecera{
+    text-align: center;    
+    margin: 15px;
+    color: cadetblue;
+}
+
+/*Se aplicará este color de letra a los span que hemos puesto con la clase titulo*/
+.titulo{
+color: #3f37c9;
+}

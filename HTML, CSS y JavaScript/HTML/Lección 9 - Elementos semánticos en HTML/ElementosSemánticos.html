@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos semánticos</title>
+    <link rel="stylesheet" href="CSS/Estilos.css">
+</head>
+<body>
+
+    <!--Los elementos semánticos ayudan a visualizar el código y ordenarlo en nuestra página web, no es obligatorio pero si es una buena práctica poner este tipo de etiquetas, se podría usar también divs, visualmente no habrá
+    ninguna diferencia-->
+
+    <!--Header es una etiqueta semánticas que el cabecero de la página, antiguamente se podía hacer lo mismo si
+    hago div class="header" pero a partir de HTML5 se incluyen etiquetas semánticas para dar sentido a la estructura
+    de la web-->
+    <header>
+        <h1>Etiquetas semánticas en HTML5</h1>
+    </header>
+    <!--Nav es la etiqueta del menú de navegación donde van los enlaces a distintas webs-->
+    <nav>
+        <!--Si ponemos # solamente, nos redigiriga a la página web original (en la que estamos)-->
+        <a href="#">Inicio</a>
+        <a href="#">Servicios</a>
+        <a href="#">Contacto</a>
+        <a href="#">Acerca de</a>
+    </nav>
+
+    <!--No es obligatorio poner section, pero hacerlo ayudará mucho a la hora de revisar el código y que los
+    navegadores identifican de que va nuestra página web (se podría hacer con div pero es mejor las etiquetas semánticas)-->
+    <section>
+        <h2>Sección 2</h2>
+        <p>Información de la sección</p>
+        <!--Aside sirve para dar información extra en una sección-->
+        <aside>
+            <p>Nombre del autor</p>
+        </aside>
+    </section>
+
+    <section>
+        <h2>Sección 2</h2>
+        <!--Los article pueden ir fuera de una sección o no, sirven para dar información-->
+        <article>
+            <h3>Artículo 1</h3>
+            <h3>Artículo 2</h3>
+        </article>
+    </section>
+
+    <!--Footer es la parte de abajo de la página donde pueden ir links, logos, mapas etc -->
+    <footer>
+        <h2>
+            <a href="https://salesianosdosa.com">Salesianos Domingo Savio</a>
+        </h2>
+    </footer>
+
+    <img src="Imágenes/ES-Semantic-Search-Non-Semantic.png" alt="" style="width: 700px;">
+</body>
+</html>

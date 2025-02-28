@@ -1,0 +1,17 @@
+h3{
+    text-align: center;
+    font-size: 60px;
+    color: chartreuse;
+}
+
+h2{
+    color: green;
+}
+
+h1{
+    color: yellow;
+    /*color: yellow !important;*/
+    /*El color yellow no se va a aplicar por que el h1 el html tiene un inline CSS, pero esto se puede
+    modificar con la línea de arriba si aplicamos !important eso tiene mayor prioridad inlcuso si es un inline CSS,
+    se aplicará lo que ponga !important */
+}

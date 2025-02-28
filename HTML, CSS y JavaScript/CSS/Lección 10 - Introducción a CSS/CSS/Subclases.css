@@ -1,0 +1,8 @@
+/*Este selector sirve para que se apliquen los estilos a los atributos HTML que sean párrafos y además que 
+tengán como clase class="centrar"*/
+
+p.centrar{
+    font-size: 50px;
+    color: blue;
+    text-align: center;
+}

@@ -1,0 +1,45 @@
+h1{
+    color: rgb(6, 6, 171);
+}
+
+ul{
+        /*Esto es para quitar el punto de la lista ul*/
+    list-style: none;
+        /*Ponemos este color de fondo*/
+    background-color: #457b9d;
+        /*Esto sirve para que la lista se muestre independiente de otros elementos, y que no se solape con el h1*/
+    overflow: hidden;
+
+        /*Esto sirve para quitar el margin y padding que se pueda poner de manera automática, con esto 
+        la ul no tendrá ni margin ni padding automático*/
+    margin: 0;
+    padding: 0;
+}
+
+    /*Solo aplica a los li*/
+
+li{
+        /*Esto coloca los elementos de la lista a la izquierda uno al lado del otro, si lo quito se pone uno debajo del otro*/
+    float: left;
+}
+
+    /*Aplica a los anclas (etiqueta a) que estén dentro de una li, si solo pongo a se aplicaría a todos los anclas de la web*/
+
+li a{
+        /*Esto sirve para que los elementos se desplieguen como un bloque*/
+    display: block;
+        /*Esto pone de color blanco la letra de cada palabra*/
+    color: white;
+        /*Esto alinea el texto al centro*/
+    text-align: center;
+
+    /*Esto hace los elementos más grandes y que se separen más*/
+    padding: 15px;
+    /*Esto quita el subrayado del link*/
+    text-decoration: none;
+}
+
+    /* Esto sirve para que cuando pase el ratón por encima se ponga el color de fondo de ese color*/
+li a:hover{
+    background-color: #1d3557;
+}

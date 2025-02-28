@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios en HTML</title>
+</head>
+<body>
+    <h1>Fromularios en HTML</h1>
+    <!--Para añadir formularios en HTML los elementos del formulario van dentro en la etiqueta form, si no hay nada
+    dentro, no se verá nada.-->
+
+    <!--<form novalidate> sirve para no validar el formulario-->
+
+        <!--He puesto método post, pero la explicación esta abajo del todo sobre que tipo de método usar-->
+    <form method="post">
+
+        <!--Label sirve para indicar para que sirve un intut, el for="" debe de coincidir con el ID del input
+        para que al hacer click, nos lleve el puntero del ratón al input correspondiente-->
+        <label for="nombre">Nombre:</label><br>
+        <!--Los elementos de tipo input nos permiten capturar información del usuario-->
+
+        <!--Hay varios tipos de inputs que veremos, es recomendable ponerle siempre un ID para que cuando pulsemos
+        sobre el label nos ponga el puntero sobre este input-->
+        <input type="text" id="nombre" name="nombre"/><br>
+
+        <label for="apellido">Apellido</label><br>
+        <!--el atributo name sirve para cuando enviemos datos a un servidor tener identificados los campos, 
+        se recomienda que sean el mismo nombre que el ID-->
+        <input type="text" id="apellido" name="apellido"><br>
+
+        <!--Ejemplo de lo anterior en la URL cuando pulsamos el botón de enviar
+        http://127.0.0.1:5500/Lecci%C3%B3n%207%20-%20Formularios%20en%20HTML/Formularios.html?nombre=wwww&apellido=wwww
+       el & separa los campos. Esta URL sirve para enviarse al servidor como una sola cadena -->
+        <!--También podemos poner inputs que ya tengan valor con el atributo value="" y se envie al URL ya que
+        es un valor por default-->
+        <input type="text" id="realizado" value="Daniel"><br>
+
+        <!--El atributo place holder sirve para darle información al usuario sobre que tiene que escribir,
+        si lo deja vacío en la URL no pondrá nada , en cuanto el usuario escriba algo ya no estará vacio y se 
+        quitará el placer holder -->
+        <input type="text" id="placeholder" name="placeholder" placeholder="Escribe algo"><br>
+
+        <!--El atributo required="true" sirve para que si o si el usuario ponga algo en el campo, por defecto
+        si no ponemos nada required="false" no habría que ponerlo pero es el valor por defecto-->
+        <input type="text" id="dni" name="dni" required="true"><br>
+
+        <!--Vemos un campo de tipo contraseña para que cuando escribamos la contraseña aparezcan ****-->
+        <label for="pass">Contraseña</label>
+        <input type="password" name="pass" id="pass" required="true" ><br>
+
+
+        <!--Esto es un botón para enviar un formulario a un servidor, el value es el texto del botón-->
+        <input type="submit" value="Enviar"/><br>
+
+        <!--Esto sirve para enviar el formulario sin verificar los campos que estén como required="true",
+        pulsar este botón enviara el formulario haya lo que haya en él-->
+        <input type="submit" formnovalidate="formnovalidate" value="Enviar sin validar">
+
+        <!--http://127.0.0.1:5500/Lecci%C3%B3n%207%20-%20Formularios%20en%20HTML/Formularios.html?nombre=4422&apellido=442424&placeholder=343&dni=34324
+        
+        Query String es la parte que está después del .html? y se envia al servidor es decir: nombre=4422&apellido=442424&placeholder=343&dni=34324
+        
+        El tipo de método por defecto es el GET que se agrega la información del formulario dentro de la URL cuando se envia al servidor pero este puede ser peligroso si hay contraseñas de por medio, para ello usaremos el método POST que se enviará al servidor la información dentro del cuerpo del mensaje en el HTTP Request (payload)
+        
+        El payload se refiere a los datos que se envían en el cuerpo de una solicitud HTTP o en la respuesta HTTP
+        
+        Para tener un método u otro hay que ir a la etiqueta form y añadir method="get" (es el que viene por defecto, si usamos este no hay que poner nada) o usar POST con method="post"
+        
+        Para ver las peticiones POST desde el navegador, vamos al inspector -> network -> paginaweb.html -> payload y completamos el formulario
+        con el método POST para ver los datos-->
+
+    </form>
+
+    <img src="Imágenes/Difference-between-GET-and-POST-Method.gif" alt="">
+    <img src="Imágenes/1_8-fT6K1o6nHiBRxKppcqOg.png" alt="">
+</body>
+</html>

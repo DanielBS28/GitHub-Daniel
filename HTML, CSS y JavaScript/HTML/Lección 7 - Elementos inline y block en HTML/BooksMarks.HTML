@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMarks en HTML</title>
+    <link rel="stylesheet" href="CSS/EstilosBookMarks.css">
+</head>
+<body>
+    <!--El atributo ID a parte de identificar un elemento y aplicarla estilos también lo podemos usar para
+    bookmarks, que sirve para mediante la etiqueta a nos redirija a una "sección" de la página donde se encuentre
+    el atributo con ese ID que pusimos en el enlace de <a> con su respectivo ID vamos a verlo con más detalle:-->
+        <h1 class="tarjeta">Canciones</h1>
+    
+        <h3 class="Cabecera">Canción y artista</h2>
+        <div class="tarjeta">
+            <h2 id="BeTheOne"><span class="titulo">Be the One</span></h2>
+            <p>Dua Lipa</p>
+        </div>
+        <div class="tarjeta">
+            <h2 id="Levitating"><span class="titulo">Levitating</span></h2>
+            <p>Dua Lipa</p>
+        </div>
+        <div class="tarjeta">
+            <h2 id="GoldenHour"><span class="titulo">Golden Hour</span></h2>
+            <p>JVKE</p>
+        </div>
+
+        <!--Cuando estemos al final de la página web y queramos subir a una sección simplemente de esta manera
+        pulsando en estos enlaces podemos hacer referencia al elemento que tiene ese ID y subiremos hasta ese 
+        elemento, recomiendo mucho hacer zoom para ver este efecto o meter mucho margin para que los elementos
+        queden arriba. El scroll se pondrá justo encima del elemento que tiene el ID-->
+
+        <!--Para mejor práctica en este caso el scroll se va a color justo donde está la canción pero no en el borde
+        de la caja, para que el scroll se pusiera encima del borde de ese elemento tendría que poner 
+        <div class="tarjeta" id="Levitating"> como podemos ver se pueden agregar una clase y un ID a un mismo elemento-->
+        <a href="#BeTheOne">Be the One</a> |
+        <a href="#Levitating">Levitating</a> |
+        <a href="#GoldenHour">Golden Hour</a>
+
+</body>
+</html>

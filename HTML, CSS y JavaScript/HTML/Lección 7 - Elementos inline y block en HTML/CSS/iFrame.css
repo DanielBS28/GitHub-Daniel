@@ -1,0 +1,34 @@
+.titulo{
+    color: blue;
+    text-align: center;
+}
+
+.marco{
+    /*Esto sirve para poner el 100% del ancho de la web a este elemento */
+    width: 100%;
+    /*Esto asigna el alto de la página web*/
+    height: 200px;
+    /*border: none; Sirve para quitar el borde (se vería muy natural es una ventaja
+    del ifram), pero vamos a aplicar un borde*/
+    border: 1px solid black;
+}
+
+.centrar{
+    text-align: center;
+}
+
+.boton{
+    background-color: white;
+    border: 2px solid #457b9d;
+    text-decoration: none;
+    /*Esto sirve para que respete el padding que vamos a poner, ya que estamos trabajando dentro de un 
+    div se comporta como un bloque, pero con esta propiedad se va a desplegar dentro de la linea como un bloque
+    y quiere decir que se va a respetar el padding y el margin, de lo contrario no se respetaria.*/
+    display: inline-block;
+    padding: 10px;
+}
+.boton:hover{
+    background-color: #457b9d;
+    color: white;
+    
+}

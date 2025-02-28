@@ -1,0 +1,23 @@
+h1{
+    color: blue;
+    text-align: center;
+}
+h2{
+    color: aquamarine;
+}
+
+p{
+    color: chartreuse;
+}
+
+
+/*Un div abarca todo el ancho de la pantalla (todos los elementos de bloque lo hacen igual)*/
+div{
+    /*Ponemos un borde a todo el div*/
+    border: 10px solid black;
+    /*Ponemos un fondo de todo el div*/
+    background-color: beige;
+    /*Todos los elementos que estén dentro del div van a tener el texto alineado al centro*/
+    text-align: center;
+    
+}
