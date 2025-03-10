@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booleans</title>
+</head>
+<body>
+    <h1>Booleanos en JavaScript</h1>
+
+    <script>
+
+        //Solo hay dos tipos de valores booleanos en JavaScript true y false como vemos a continuación
+        let verdadero = true
+        let falso = false
+        //También podemos inicializar variables con el constructor de boolean, es lo mismo que lo de arriba pero con 
+        // mas texto
+        let v = Boolean(true)
+        let f = Boolean(false)
+
+
+        //Si los imprimimos por consola aparecerán true y false
+        console.log(verdadero,falso)
+
+        //Podemos ver con esto el tipo de datos de las variables verdadero y falso
+        console.log(typeof(verdadero),typeof falso)
+
+        //Casos donde los booleanos tienden a true y a false (casos raros y especiales)
+        console.log(Boolean(0)) // tiende a falso siempre tiende a false
+        console.log(Boolean(-7)) // tiende a true por que está "inicializado"
+        console.log(Boolean(100)) // tiende a true por que está "inicializado"
+        console.log(Boolean("")) // tiende a falso por que está vacia la cadena
+        console.log(Boolean("Hola")) // tiende a true por que cualquier cadena aunque sea un espacio que tenga algo tiende a true
+        
+    </script>
+            <!--  Explicación mas detallada de todos los tipos que tienden a verdadero o falso-->
+    <img src="Imágenes/True.png" alt="" style="width: 1000px;">
+    <img src="Imágenes/False.png" alt="" style="width: 1000px;">
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Const en JavaScript</title>
+</head>
+<body>
+    <h1>Const en JavaScript</h1>
+    <script>
+
+        //La declaración de variables con const me permite tener una variable que no se cambiará el valor nunca.
+        // se suele poner en mayúsculas.
+        const PI = 3.1416
+        console.log(PI) //Esto imprimira el valor de PI
+
+        // PI = 4 Esto dará un error ya que no podemos cambiar el valor de las variables constantes ya que es un dato primitivo
+        //los datos primitivos no se pueden modificar con const
+        {
+            console.log(PI) //Esto imprimira el valor de PI aunque este en un bloque
+        }
+
+       // const NUEVE; Las variables constantes no pueden ser inicializadas sin nada, en cambio las variables con 
+       //var y let si que no hacen falta que esten inicializadas. Por ejemplo:
+
+       var a;
+
+       a = 9
+       console.log(a)
+
+        //Declaración de un objeto
+       let objeto = {
+        nombre: "Daniel",
+        edad: 21
+       }
+
+       //Declaración de un array
+       let colores = ["azul", "blanco", "rojo"]
+
+       console.log(objeto)
+       console.log(colores)
+
+       //Para agregar atributos al objeto uso:
+       objeto.ciudad = "Madrid"
+
+       //Para aregar un elemento al array usaremos:
+       colores.push("verde")
+
+       console.log(objeto)
+       console.log(colores)
+
+       //let nos ha permitido modificar el objeto y el array.
+
+       const pruebaObjeto = {
+
+        nombre: "Daniel"
+       }
+       pruebaObjeto.edad = 21
+       console.log(pruebaObjeto)
+
+       /*
+       Si que hemos podido modificar el objeto, por que aunque usemos const los objetos en JS 
+       son compuestos (se accede a la referencia del valor), sigue siendo un objeto. Esto también
+       se puede aplicar a los arrays.*/
+
+    </script>
+</body>
+</html>

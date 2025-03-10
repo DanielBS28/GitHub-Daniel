@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+<body>
+    <h1>Objetos en JavaScript</h1>
+
+    <!--"Se dice que en JavaScript todo son objetos"-->
+    <script>
+
+    // Declarar un objeto como const permite cambiar sus atributos pero no se puede crear otro objeto que se llame
+    //igual debido a que no se puede copiar su referencia y con eso evitamos perder la referencia de este objeto,
+    //también se puede hacer con let pero es mejor hacerlo con const por lo que expliqué.
+    const objeto = {
+
+        //Los objetos se crean con {}
+    }
+    console.log(objeto)
+
+    //Otra forma de crear objetos pero obsoleta
+    const objeto2 = new Object()
+    console.log(objeto)
+
+
+    /*Podemos crear un objeto de esta manera, con sus atributos que pueden ser de cualquier tipo incluso funciones
+    y objetos. Sintaxis-> atributo: valor*/
+    const Daniel = {
+
+        nombre: "Daniel",
+        apellido: "Sánchez",
+        edad: 21,
+        pasatiempos: ["Jugar","Animales"],
+        estudiante: true,
+        contacto:{
+            email:"danielsalesianosdosa@gmail.com",
+            movil: "123456789",
+            twitter: "@Yakito28_CR"
+        },
+        saludar: function(){
+            console.log("Hola")
+        },
+        decirMiNombre: function(){
+            //this hace referencia al mismo objeto. Se accede a los atributos con this.
+            console.log(`Hola me llamo ${this.nombre} y mi apellido es ${this.apellido} y tengo
+            ${this.edad} años y me puedes seguir en twitter como ${this.contacto.twitter}`)
+        }
+    }
+    console.log(Daniel) //Imprimo el objeto entero
+
+    console.log(Daniel["nombre"]) //Esto accede al objeto, al campo nombre y lo imprime
+    console.log(Daniel["apellido"]) ////Esto accede al objeto, al campo apellido y lo imprime
+
+    console.log(Daniel.nombre) //También puedo acceder a los atributos del objeto con un . (es mejor de esta forma)
+    //Las funciones dentro de un objeto se les llama métodos y realiza una acción de manera interna. 
+
+    console.log(Daniel.pasatiempos) //Imprimo todo el array
+    console.log(Daniel.pasatiempos[0]) //Imprimo la posición 1 del array
+
+    console.log(Daniel.contacto) //Imprimo todo el objeto contacto
+    console.log(Daniel.contacto.twitter) //Imprimo del objeto contacto solo el twitter
+
+    Daniel.saludar() //Se realiza la función del objeto que se llama saludar
+    Daniel.decirMiNombre() //Se realiza la función del objeto que llama a decirMiNombre
+
+    //Esto sirve para tener todos los atributos del objeto como array 
+    console.log(Object.keys(Daniel))
+
+    //Esto sirve para tener todos los valores del objeto como array 
+    console.log(Object.values(Daniel))
+
+    //Esto sirve para saber si el objeto tiene como campo, si lo tiene devuelve true, si no lo tiene devuelve falso
+    console.log(Daniel.hasOwnProperty("nombre"))
+
+    
+
+
+    </script>
+</body>
+</html>

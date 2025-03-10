@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undefined, NaN y null</title>
+</head>
+<body>
+    
+    <h1>Undefined, NaN y null</h1>
+
+    <script>
+        //Tanto null como undefined van a representar (un valor ausente) una variable que no tiene valor 
+        //pero la gran diferencia es que undefined es una variable que no ha sido inicializada.
+        //null en cambio es otra variable vacia pero que está inicialiada a null, la inicializo el 
+        //programador, mientras que undefined lo asigna automáticamente JavaScript cuando una variable
+        // no ha sido inicializada. Ambas variables no tienen valor en la variable pero la diferencia es lo que expliqué.
+
+        //Una variable undefined como ejemplo ya que no la hemos inicializado
+        let indefinida;
+        console.log(indefinida)
+
+        let nula = null
+        console.log(nula)
+
+        //NaN significa not a number aparece cuando hacemos operaciones aritméticas entre tipos de datos que no son números
+
+        let NoEsUnNumero = "Hola" * 3.7
+        console.log(NoEsUnNumero)
+        
+    </script>
+</body>
+</html>

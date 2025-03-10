@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números</title>
+</head>
+<body>
+    <h1>Números en JavaScript</h1>
+
+    <script>
+        //Para declarar números en JavaScript usaremos:
+
+        let numero = 1
+
+        //O también podemos inicializarlo a trvés del constructor
+        
+        let numero2 = new Number(1)
+
+        console.log(numero)
+        console.log(numero2)
+
+        let numero3 = 7.15
+
+        // toFixed redondea hacia arriba o hacía abajo los números decimales que nosotros pongamos 
+        // Si ponemos el 1, redondeará a 7.2  --->  si ponemos 3 redonderará a 7,150
+        console.log(numero3.toFixed(3))
+
+        //Si hago parseInt(numero3) me redondeará y me imprimirá la parte entero de numero3, es decir 7
+        console.log(parseInt(numero3))
+
+        //Si hago parseFloat(numero3) me convertirá el número a float y me imprimiá todos los decimales
+        console.log(parseFloat(numero3))
+
+        let numero4 = "5.6"
+        let numero5 = 3
+        let numero6 = 2
+        let numero7 = 6.27
+
+        //type of me sirve para saber que tipo de datos tiene una variable
+        console.log(typeof(numero4), typeof(numero5), typeof(numero6))
+
+        //Para imprimir la suma de números pongo un más como vemos aquí
+        console.log(numero5+numero6)
+
+        //Pero hay que tener cuidado ya que si sumamos un número a una string se concatenerá como vemos aquí:
+        //en consola si aparece azul es un número, pero si es negro significa que es una string.
+        console.log(numero4+numero5)
+
+        //Esto parece que está bien pero no, ya que al ser decimal hay errores de cálculo para que de el resultado
+        //correcto ya que no tiene en cuenta el parse int la parte decimal
+        console.log(parseInt(numero4) + numero7)
+
+
+        //Ahora si que está bien pero podemos usar librerias ya echas para evitar este tipo de errores en JavaScript
+        console.log(parseFloat(numero4) + numero7)
+
+         //Esto es lo mismo que lo de arriba (al hacer el parse de número4) pero quería explicar que parse es un método del constructor number
+        //como podemos ver a continuación, pero internamente JavaScript lo reconoce por eso no es necesario
+        //especificar Number.función
+        console.log(Number.parseFloat(numero4))
+
+        console.log("La suma de número5 y número 6 es: " + (parseInt(numero5)+parseInt(numero6)))
+
+    </script>
+
+</body>
+</html>

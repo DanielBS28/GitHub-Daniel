@@ -1,0 +1,25 @@
+.sólido{
+    border: solid red;
+    border-width: 10px;
+
+    /*Esto funciona similar respecto a los elementos que hemos trabajdo dependiendo de los valores que tengamos 
+    se va a aplicar a unos lados u a otros.*/
+    border-radius: 15px;
+}
+
+.borde2{
+    border: solid red;
+    border-width: 5px;
+    border-radius: 20px;
+}
+
+.borde3{
+
+    /*El primer valor afecta a la esquina derecha arriba, el segundo esquina izquierda de arriba, el tercero
+    en la esquina inferior izquierda y el cuarto a la esquina inferior derecha.
+    
+    También podiamos haber hecho lo mismo con border-radius-right left top bottom...*/
+    border: 5px solid blue;
+    border-radius: 20px 0px 10px 0px;
+
+}

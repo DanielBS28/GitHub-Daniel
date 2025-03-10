@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings</title>
+</head>
+<body>
+    <h1>Strings en JavaScript</h1>
+<script>
+    let nombre = "Daniel"
+    let apellido = "Baldazo Sánchez"
+
+    //Para concatenar cadenas usamos "" + variable como vemos a continuación:
+    let saludo = "Hola, mi nombre es: " + nombre + " y mis apellidos son " +apellido+"."
+    console.log(saludo)
+
+    //Interpolación de variables
+
+    //Template String 
+    //Esto es lo mismo que lo de arriba pero es mas cómodo de manejar y mas natural a la vista
+    let saludo2 = `Hola mi nombre es: ${nombre} y mis apellidos son ${apellido}.`
+    console.log(saludo2)
+
+    /*Otra ventaja que tienen las template string (``) frente a las comillas dobles o simples es que 
+    puedo tener tabuladores con código HTML, si ponemos "" con el código que vemos aquí no lo puedo tener 
+    de la misma manera que tengo estaciones2 ya que con "" no permite tabuladores ni saltos de linea ni whitespaces
+    */
+
+    //Con ""
+    let estaciones = "<ul><li>Primavera</li><li>Verano</li><li>Otoño</li><li>Invierno</li></ul>"
+    console.log(estaciones)
+
+    //Con ``
+    let estaciones2 = `<ul>
+    <li>Primavera</li>
+    <li>Verano</li>
+    <li>Otoño</li>
+    <li>Invierno</li>
+</ul>`
+console.log(estaciones2)
+
+//Esto es lo mismo que estaciones, pero de manera mas visual, aunque se parezca a estaciones dos, cuando hacemos un
+//console log aparecerá igual que estaciones y no como estaciones2.
+let estaciones3 = "<ul>"
+    estaciones3 += "<li>Primavera</li>"
+    estaciones3 += "<li>Verano</li>"
+    estaciones3 +=  "<li>Otoño</li>"
+    estaciones3 += "<li>Invierno</li>"
+    estaciones3 +=  "</ul>"
+    console.log(estaciones3)
+
+    //Esto imprimirá el tamaño de la variable nombre
+    console.log(nombre.length)
+
+    //Otra opción de crear Strings, pero no se usa.
+    let a = new String("Hola")
+    console.log(a)
+</script>
+<!--
+<ul>
+    <li>Primavera</li>
+    <li>Verano</li>
+    <li>Otoño</li>
+    <li>Invierno</li>
+</ul>
+-->
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+div{
+    padding: 10px; 
+    border: 15px solid blue;
+    margin-top: 50px;
+    background-color: lime;
+    /*Si ponemos de width ponemos width: 1300px; y la pantalla es pequeña aparecerá un scroll para mover la pantalla y ver el contenido*/
+
+    /*Pero si ponemoss max-width: 1300px el contenido de ajustará si la pantalla es más pequeña. Si la pantalla supera 1300px el div se quedará como está no seguirá creciendo, también podemos aplicar lo mismo con max-height pero en ese caso será para el alto, también en vez de pixeles podemos usar % por ejemplo 100% sería todo el ancho de la página*/
+    max-width: 1300px;
+    height: 200px;
+}

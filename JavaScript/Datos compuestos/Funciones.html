@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones</title>
+</head>
+<body>
+    <h1>Funciones en JavaScript</h1>
+    <script>
+
+        //Las funciones también en JS son un objeto (se consideran objetos)
+        //Reciben argumentos y son muy poderosas
+
+        //Función declarada
+
+        //una funcion es un bloque de lineas de codigo que se ejecutan
+        function EstoEsUnaFuncion(){
+            console.log("Uno")
+            console.log("Dos")
+            console.log("Tres")
+        }
+
+        function FuncionDevuelveValor() {
+            console.log("Cuatro")
+            console.log("Cinco")
+            console.log("Seis")
+
+            return "La función a devuelto una cadena de texto"
+        }
+
+        //Invocación de las funciones
+        EstoEsUnaFuncion()
+        FuncionDevuelveValor()
+
+        let ValorFuncion = FuncionDevuelveValor()
+
+        console.log(ValorFuncion)
+
+        //Función que recibe parámetros
+        function Saludar(nombre,edad) {
+            
+            console.log(`Hola mi nombre es: ${nombre} y tengo ${edad} años`)
+        }
+
+        //Llamo a la función Saludar con nombre Daniel y 21 como edad
+        Saludar("Daniel",21)
+
+        //Si llamo a la misma función sin parámetros sale con undefined
+        Saludar()
+        //Para solucionar esto, se puede hacer la misma función pero asignando parametros con valores por defecto,
+        //Esto sirve para evitar el undefined de antes y que si no le pasamos parámetros imprima los de por defecto,
+        //Si recibe parámetros se usaran los que hemos pasado
+        function Saludar2(nombre = "Desconocido",edad=0) {
+            
+            console.log(`Hola mi nombre es: ${nombre} y tengo ${edad} años`)
+        }
+        Saludar2("Daniel",21)
+        Saludar2("Daniel")
+        Saludar2()
+
+        //Vemos como invocamos a la función desde arriba de la función original y funciona correctamente
+        FuncionDeclarada()
+
+        //Funciones declaradas VS funciones expresadas
+        function FuncionDeclarada (){
+            console.log("Esto es una función declarada, puede invocarse desde cualquier parte del código, independientemente si esta función esta declarada abajo y se la llama desde mas arriba")
+
+            //Esto es debido a que JS hace la elevación (similar a lo que vimos con var) de las funcones y está disponible en todo el código. (Solo en funciones declaradas)
+        }
+
+        FuncionDeclarada()
+
+        //Funciones expresadas: se recomienda usar const para que se guarde en una variable
+
+        //No hace falta ponerle el nombre a la función por que el nombre es el que le hemos dado a la variable,
+        //Esto se conoce como función anonima al no tener nombre
+
+        //No puedo llamar a una función expresada si antes no se ha declarado, dará un error.
+        FuncionExpresada()
+
+        const FuncionExpresada = function(){
+
+            console.log("Esto es una función expresada, es decir una función que se le ha asignado como valor una variable, si invocamos esta función antes de su definición JS nos dirá: Cannot access 'FuncionExpresada' before initialization")
+        }
+
+        //para llamar la función es igual que las demás como vemos a continuación
+        FuncionExpresada()
+
+
+    </script>
+
+</body>
+</html>

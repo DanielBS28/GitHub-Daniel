@@ -1,0 +1,20 @@
+div{   
+    padding: 10px; 
+    border: 15px solid blue;
+    background-color: lime;
+    width: 300px;
+    height: 200px;
+}
+
+/*El espacio entre las cajas de arriba abajo debería de ser 50px ya que el de la caja1 es 30 y la caja 2 son 20 pixeles
+pero el concepto de border collapse es que esto no se cumple, va a haber de margen de separación entre elementos
+el que mayor número de margen tenga, en este caso el espacio como margen entre la caja 1 y la caja 2 solo va a ser de 
+30 pixeles, ya que la caja1 tiene mayor número de pixeles de margen. Esto se ve mejor con el inspector*/
+.caja1{
+margin: 30px;
+}
+
+.caja2{
+    
+    margin: 20px;
+}

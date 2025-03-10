@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <h1>Arrays en JavaScript</h1>
+
+    <script>
+        //Declaración de un array
+        const a = []
+        //Nos va a imprimir el array
+        console.log(a)
+
+        //Array de strings
+        const b = ["Daniel", "Javier", "Asela"]
+        console.log(b)
+
+        //Array de strings
+        const c = [1, 25, 44]
+        console.log(c)
+
+        //También puedo declarar un array y que dentro de él haya varios tipos de datos
+        const d = ["Daniel", 33, 7.5,["Juan", "Flora", "Maria Juana", [1,2,3,4]], true]
+        console.log(d)
+
+        //Siempre los arrays empiezan en la posición 0 (posición 1 del array)
+        //Esto imprimirá el tamaño del array
+        console.log(d.length)
+
+        //Para imprimir el valor de una posición específica de un array ponemos nombreArray[posicion]
+        console.log(d[1]) //Esto imprimiá 33
+
+        console.log(d[3])//Esto imprimirá todo el array de Strings 
+
+        console.log(d[3][2]) //Esto accederá a la posición 3 del array que es de tipo array e imprimirá el valor 2 que es Maria Juana
+
+        console.log(d[3][3][3])//Esto accederá a la posición 3 del array que es de tipo array, luego en ese array a la posicion 3 que es otro array y finalmente a la posición 3 que imprimirá un 4
+
+        //Esto es otra forma de crear arrays en JavaScript, El metodo Array.of nos permite acceder al array.
+        const e = Array.of(["A","B","C",1,2,3])
+
+        //Imprimimos la variable e que es un array
+        console.log(e)
+
+        //Esto sirve para crear un array de 100 posiciones y llenarlo con el método .fill con todo valores a falso
+        const arrayLleno = Array(100).fill(false)
+        console.log(arrayLleno)
+
+        //Otra forma de crear arrays es con la palabra reservada new como vemos a continuación pero está en desuso
+        const f = new Array(1,2,3)
+        console.log(f)
+
+        //Creamos un array de colores y lo imprimimos
+        const Colores = ["Rojo", "Verde", "Azul"]
+        console.log(Colores)
+
+        //Con Colores.push puedo agregar al final del array un valor
+        Colores.push("Amarillo")
+        console.log(Colores)
+
+        //Con colores.pop() eliminamos el último elemento del array
+        Colores.pop()
+        console.log(Colores)
+
+        //Con NombreArray.forEach() puedo recorrer el array entero (y crear una función que 
+        // haga cosas dentro) y tiene muchas utilidades
+        //como por ejemplo crear una lista e imprimir el elemento dentro de la lista. 
+        //El primer elemento de la función es el elemento (el texto del array) y el segundo
+        //la posición que ocupa en el array.
+        Colores.forEach(function (elemento,index){
+            console.log(`<li id="${index}">${elemento}</li>`)
+        })
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

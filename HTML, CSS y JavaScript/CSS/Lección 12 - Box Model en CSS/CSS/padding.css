@@ -1,0 +1,9 @@
+div{
+
+    background-color: blue;
+    /*Si ponemos 2 valores serán el primero arriba y abajo y el segundo derecha e izquierda,
+    si tenemos 3 elementos, el primero será para la perte superior, el segundo valor para los dos lados, y el tercer
+    valor se usa para la parte de abajo, si se ponen 4 valores, sería el primero arriba, el segundo derecha, el tercero abajo
+    y el cuarto izquierda. Y si solo hay un valor se aplica a los 4 sitios*/
+    padding: 10px 5px
+}

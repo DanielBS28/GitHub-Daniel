@@ -1,0 +1,17 @@
+div{
+    padding: 10px; 
+    border: 15px solid blue;
+    margin: 100px;
+    background-color: lime;
+    width: 300px;
+    height: 200px;
+}
+
+p.interno{
+
+    /*inherit sirve para heredar el margin el elemento padre es decir en este caso un div, si no hubieramos puesto
+    margin: inherit el parrafo dentro del div estaría en la parte izquierda, mientras que poniendo esto tomará los 
+    valores que tenía el margin del div*/
+    margin: inherit;
+
+}

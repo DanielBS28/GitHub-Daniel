@@ -1,0 +1,64 @@
+h1{
+    text-align: center;
+}
+
+.punteado{
+    border-style: dotted;
+    /*Aquí he metido diferentes tipos de ancho al mismo borde
+
+    también tenemos border-right left top y bottom... en vez de pixeles puedo usar otras propiedades: medium thick
+    
+    Si ponemos tres valores border-width: 10px 5px 3px el primer valor es la parte de arriba, el segundo los lados, y el tercero la parte de abajo
+
+     Si ponemos dos valores border-width: 10px 5px el primero será para arriba y abajo, y el segundo será para la derecha e izquierda.
+    */
+    border-width: 10px 5px 3px 2px;
+
+    /*Pasa lo mismo con border-color que podemos jugar con los atributos que necesitemos, también en vez de poner 
+    el nombre por color, el hexadecimal, hsl, rgb etc...*/
+    border-color: brown hotpink greenyellow;
+}
+.discontinuo{
+
+    border-style: dashed;
+}
+
+.solido{
+
+    /*Esto simplifica lo anterior, es lo mismo pero añadiendo 3 propiedades más, lo único en está propiedad si o si
+    tiene que estar el style, si solo pongo los pixeles o el color no funcionará*/
+    border: 10px solid green;
+}
+
+.doble{
+    border: 10px double;
+}
+.surco{
+    border: 10px groove;
+    /* Esto lo mismo que lo de arriba
+    border-style: groove;
+    border-width: 10px;
+    */
+}
+.cresta{
+    border: 10px ridge;
+}
+.recuadro{
+    border: 10px inset;
+}
+
+.outset{
+    border: 10px outset;
+}
+
+.sin_borde{
+    border: none;
+}
+
+.oculto{
+    border: hidden;
+}
+.mixto{
+    /*Puedo combinar varios tipos de bordes como podemos ver a continuación:*/
+    border-style: dotted solid dashed double;
+}

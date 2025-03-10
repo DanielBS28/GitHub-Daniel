@@ -1,0 +1,24 @@
+h1{
+    text-align: center;
+    
+}
+
+/*Si es un elemento es de bloque ocupa toda una línea como podemos ver en este efecto, si es inline como span solo lo que ocupa*/
+.rojo{
+    /*Aquí vemos como se aplica un borde sólido*/
+    border: 10px solid firebrick;
+}
+
+.rosa{
+    /*Aquí vemos como se aplica un borde con líneas*/
+    border: 10px dashed rgb(255, 192, 203);
+}
+.naranja{
+        /*Aquí vemos como se aplica un borde double*/
+border: 10px double hsl(39, 100%, 50%);
+
+}
+.verde{
+        /*Aquí vemos como se aplica un borde con puntos*/
+    border: 10px dotted #00ff00;
+}

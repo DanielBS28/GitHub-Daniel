@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores</title>
+</head>
+<body>
+    <h1>Operadores en HTML</h1>
+
+    <script>
+
+        //ARITMÉTICOS: +-*/%() JavaScript respeta signos y paréntesis
+
+        let a = 5+5
+        let noModulo = 5/2 // La / nos devuelve el cociente
+        let modulo = 5%2 //El módulo nos devuelve el resto
+
+        console.log(a)
+        console.log(noModulo)
+        console.log(modulo)
+
+        //RELACIONALES > < >= == === != !==
+
+        console.log(8>9) //falso
+        console.log(9 > 8) // true
+        console.log(8>=9)//Falso
+        console.log(9>=8) // True
+        console.log(7<7)//Falso
+        console.log(7<=7) //true
+
+        /**
+         * = Asignación de una variable
+         * == Comparación de valores
+         * === Comparación de tipo de dato y valor (es muy buena práctica)
+        */
+
+        console.log(7==7) //Verdadero
+        console.log("7"==7)//Verdadero, por que son el mismo valor
+        console.log(0==false)//Verdadero
+
+        console.log(7===7) //Verdadero
+        console.log("7"===7)//falso, aunque son el mismo valor son tipos de datos diferentes
+        console.log(0===false)//falso, no es el mismo tipo de datos
+
+        // Incremento y decremento
+
+        let i = 1
+        i = i+2
+        console.log(i)//Esto dará 3
+        let j = 1
+        j += 2
+        console.log(j)//Esto dará 3, igual que el anterior pero de manera simplificada, también se podría haber echo con -= pero en este caso es restar
+
+        //Operador unario
+        i--//Es lo mismo que en otros lenguajes
+        i++
+        ++i
+        --i
+
+        /*Operadores lógicos
+        ! - Not (Niega, es decir lo verdadero se vuelve falso y viceverss)
+        || Or (Con que una condición sea verdadera ya da true, si no dará falso)
+        && And (Todas las condiciones deben de ser verdaderas)
+        */
+
+        console.log(!true) //Falso, "se da la vuelta" al valor
+        console.log("9"===9 || 9===9) //True, por que una de ella de cumple
+        console.log("9"===9 && 9===9) //Falso, no todas son verdaderas las condiciones
+        console.log("9"==="9" && 9===9) //True, todas son verdaderas las condiciones
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

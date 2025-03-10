@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JavaScript</title>
+</head>
+<body>
+    <h1>Fundamentos de JavaScript</h1>
+    <script>
+        var hola = "Hola mundo con var" // Esto es una variable declarada con var
+        let hello = "Hola mundo con let" //Esto es una variable declarada con let
+
+        // La diferencia entre var y let son el ámbito donde actuan las variables, si se usa
+        //var el ámbito donde actuará esa variable será el global, mientras que si uso let
+        // será una variable de bloque (solo estará disponible en ese trozo de la función)
+
+        console.log(hola) // Esto sirve para imprimir por consola la variable hola
+
+        console.log(window) //El objeto donde se almacena el ámbito global, se llama window.
+        //representa el objeto que mapea toda la ventana del navegador para JavaScript. Estará la variable
+        // hola por que es de ámbito global
+
+        console.log(window.hola) //Imprimirá hola mundo con var por que está declarada como global.
+        console.log(window.hello) //no existe ya que este variable es de bloque y solo está disponible
+        // en el bloque que se ha creado. 
+
+        console.log("***********************var****************************")
+
+        var musica = "Disco"
+        console.log("Variable musica antes del bloque", musica) //Esto va a imprimir Disco
+
+        //un bloque es todo lo que va dentro de {}
+        {
+            var musica = "Pop"
+            console.log("Variable musica dentro del bloque", musica) // Esto va a imprimir Pop
+        }
+        console.log("Variable musica después del bloque", musica) //Esto va a imprimir Pop
+
+        /*
+        Este último console.log va a imprimir pop por que aunque var musica se haya definido en un bloque
+        al ser declarado con var se hace una "elevación de variable" y la variable de música dentro del 
+        bloque sube al ámbito global (fuera de los {}) y el valor cambia por eso después el bloque imprime Pop,
+        esto puede ser algo confuso ya que debería de imprimir Disco al estar en el mismo ámbito pero no es así.
+        Desde 2015 este error se ha solucionado con la declaración de variables de tipo let que veremos a continuación
+        */
+
+        console.log("***********************let****************************")
+        let musica2 = "Disco"
+        console.log("Variable musica2 antes del bloque", musica2) //Esto va a imprimir Disco
+
+        //un bloque es todo lo que va dentro de {}
+        {
+            let musica2 = "Pop"
+            console.log("Variable musica2 dentro del bloque", musica2) // Esto va a imprimir Pop
+        }
+        console.log("Variable musica2 después del bloque", musica2) //Esto va a imprimir Disco
+
+        /*
+        Ahora si que vemos que se respete al ámbito de las variables al usar let, estas variables no están 
+        dentro del objeto windows que representa el objeto global dentro del navegador, por tanto podemos decir
+        que es mejor let antes que var para evitar problemas, es una mala práctica usar siempre var*/
+            </script>
+</body>
+</html>

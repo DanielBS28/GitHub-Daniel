@@ -1,0 +1,21 @@
+div{
+
+    padding: 10px; 
+    border: 15px solid blue;
+    margin-top: 50px;
+
+    background-color: lime;
+    width: 300px;
+    height: 200px;
+    /*Como vimos anteriormente, para calcular el ancho de la caja había que sumarle al ancho establecido, el margin,
+    padding y border (box-sizing: border-content es lo que viene por defecto), pero con la propiedad de box-sizing podemos establecer el ancho de la caja con width y será
+    ese valor el ancho de la caja, no se le sumará el padding, ni margin ni border, ya están incluidos con el box-sizing
+    En este caso el div medirá 300 de ancho y 200 de alto (no se le suma ninguna propiedad)*/
+    box-sizing: border-box;
+}
+
+*{
+    /*Esto quita el padding y margin automático que css pone por defecto*/
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,60 @@
+h1{
+
+    text-align: center;
+    color: aqua;
+}
+
+.caja{
+    padding: 10px;
+    color: white;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    margin: 5px auto;
+    font-size: 10px;
+    float: left;
+}
+
+.rojo{
+    background-color: crimson;
+}
+.rosa{
+    background-color: pink;
+}
+/*rgb va por tres grupos que van desde 0 a 255, el primer grupo hace referencia al rojo, 
+el segundo grupo hace referencia al verde y el tercer grupo hace referencia al azul. 0 es ausencia de color
+y 255 es el máximo color de ese grupo*/
+.rgb{
+    background-color: rgb(131,56,236);
+}
+/*El último valor es el canal alfa o transparencia que va de 0(no se ve) a 1 (se ve el color completo)*/
+.rgba{
+    background-color: rgb(131,56,236,0.3);
+}
+
+/*En hexadecimal se pone con # y va por pares (hay 3 pares) el primer par es para el rojo,
+el segundo par es para el verde y el tercer par es para el azul el rango de colores va desde
+00 00 00 a ff ff ff*/
+.hex{
+    background-color: #0091ad;
+
+}
+
+/*La transparencia en hexadecimal añade un par mas al #*/
+.hextransparencia{
+    background-color: #0090ad32;
+
+}
+
+/*En hsl (hue saturation lightness)El primer valor hace referencia a una rueda de colores que va desde 0 hasta 360,
+el segundo valor es la saturación que va en % de 0 a 100% y el tercer valor es la iluminación que igual
+va en porcentaje de 0 a 100% */
+.hsl{
+    background-color: hsl(132, 91%, 27%)
+
+}
+
+.hsltransparencia{
+    background-color: hsla(132, 91%, 27%, 0.493);
+
+}
