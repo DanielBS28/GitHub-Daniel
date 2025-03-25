@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Arrow Functions</h1>
+    <script>
+        //Las arrow function es una nueva forma de declarar funciones, tienen que ser funciones anonimas que sean exprexadas.
+
+        const saludo = function(){
+            console.log("Hola")
+        }
+
+        saludo()
+
+        //Puedo hacer lo mismo con una arrow function de forma abreviada
+        const saludo2 = () =>{
+            console.log("Hola")
+        }
+
+        saludo2()
+
+        //Si solo es una linea lo que tiene la función como tenemos anteriormente se podría poner sin llaves
+
+        const saludo3 = () => 
+        console.log("Hola") //Lo podría poner al lado del => para que quede mejor
+
+        saludo3()
+
+        let nombre = "Daniel"
+        //Para recibir parámetros en una función flecha, ponemos los parámetros entre paréntesis
+        const saludo4 = (nombre) =>{
+            console.log(`Hola mi nombre es ${nombre}`)
+        }
+
+        saludo4(nombre) //Llamo a la función con el parámetro nombre
+        //Si recibe un parámetro la función flecha puedo quitar el parentesis: 
+        // const saludo4 = nombre =>  console.log(`Hola mi nombre es ${nombre}`)
+
+
+        //El retorno de una función arrow lo hace de manera más expresiva, aquí vemos una función normal
+        const sumar = function (a,b) {
+            return a +b;
+        }
+        console.log(sumar(8,9))
+        //Si lo hacemos con una arrow function lo tenemos todo en la misma linea como vemos:
+        const sumar2 = (a,b) => (a+b);
+        console.log(sumar2(2,3))
+
+        //Si la función tiene varias lineas si o si hay que poner {}
+        const funcion_varias_lineas = () =>{
+            console.log("Uno")
+            console.log("Dos")
+            console.log("Tres")
+
+        }
+
+        funcion_varias_lineas()
+
+        //Vamos a ver como usar las arrow functions con el for each
+        //Sin arrow function
+        const numeros = [1,2,3,4,5]
+        numeros.forEach(function(el, index){
+            console.log(`El elemento ${el}, está en la posición ${index}`)
+        })
+
+        //Con arrow function (nos ahorramos la palabra function)
+        numeros.forEach((el, index) => {
+        console.log(`El elemento ${el}, está en la posición ${index}`)}
+        )
+
+        function perro(){
+            console.log(this)
+        }
+        perro()//This se vuelve el objeto window
+        
+        const perro2 = {
+            nombre: "Yako",
+            ladrar(){
+                console.log(this)//En este caso this hace referencia al objeto perro2
+            }
+        }
+        perro2.ladrar()
+
+        const perro3 = {
+            nombre: "Yako",
+            ladrar:() => {
+                console.log(this)//En este caso this hace referencia al objeto window por que en las arrow function captura el contexto del objeto donde se encuentra, si es una función normal (no arrow) entonces el this seria el objeto, pero si es arrow function tienen la capacidad tienen la capadidad de reconocer el contexto donde el objeto padre a sido declarado en este caso window, los métodos en un objeto es mejor sin arrow function
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

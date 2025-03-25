@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Objetos literales</h1>
+
+    <script>
+
+        //los objetos literales es una nueva forma de escribir atributos o métodos
+        let nombre = "Kenai", edad = 7
+
+        //Forma antigua
+        const perro ={
+            nombre: nombre,
+            edad: edad,
+            ladrar: function(){
+                console.log("Guau Guau")
+            }
+        }
+
+        console.log(perro)
+        perro.ladrar()
+
+
+        /*Los objetos literales nos ahorran el problema que hemos visto arriba, tenemos una variable nombre
+        y un objeto con el atributo nombre, si queremos asignar a ese atributo la variable nombre, ponemos nombre: nombre,
+        pero eso podemos simplificarlo si el nombre del atributo y la variable son iguales de la siguiente forma:
+        */
+        const dog ={
+            nombre, 
+            edad,
+            //Si no tenemos un dato en una variable, no pasa nada lo hacemos de la manera original
+            raza: "Bichón Maltés",
+            //Esto es una manera abreviada de tener una función como atributo
+            ladrar(){
+                console.log("Guau Guau Guau")
+            }
+        }
+
+        console.log(dog)
+        dog.ladrar()
+
+    </script>
+</body>
+</html>

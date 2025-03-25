@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Objeto console en JavaScript</h1>
+
+    <script>
+
+        //console es un objeto
+        console.log(console)
+        //Podemos enviar errores a la consola
+        console.error("Esto es un error")
+        //Alertas con console
+        console.warn("Esto es un aviso")
+        //información
+        console.info("Esto es para dar información")
+        
+        //mensaje con console log
+        console.log("Esto un registro de lo que ha pasado en la aplicación")
+
+        let nombre = "Jon", apellido ="Mircha", edad = 35
+        console.log(nombre)
+        console.log(apellido)
+        console.log(edad)
+
+        //también podría haber echo lo mismo en una linea
+        console.log(nombre, apellido, edad)
+
+        //o también lo podría haber puesto como una frase
+        console.log(`Hola mi nombre es ${nombre}, mi apellido es ${apellido}, y mi edad es ${edad} años`)
+
+        //también lo puedo hacer al estilo printf con comodines %s es string y %d es decimal
+        console.log(`Hola mi nombre es %s, mi apellido es %s, y mi edad es %d años`, nombre, apellido, edad)
+
+        //Esto limpiar la consola
+        //console.clear()
+
+        console.log(window)
+        console.log(document) //es la representacion del documento html con javascript (document)
+
+        console.dir(window) //muestra todas las propiedades del objeto window
+        console.dir(document) //Muestra todas las propiedades del objeto document
+
+        //Esto sirve para crear un grupo en la consola
+        console.group("Los cursos de Daniel en youtube")
+        console.log("Clash Royale")
+        console.log("Clash of clans")
+        console.log("Pokémon")
+        console.groupEnd()
+
+        //Lo mismo pero con group collaspe
+        console.groupCollapsed("Los cursos de Daniel en youtube")
+        console.log("Clash Royale")
+        console.log("Clash of clans")
+        console.log("Pokémon")
+        console.groupEnd()
+
+        //Me permite ver por consola en modo tabla las propiedades del objeto consola
+        console.table(Object.entries(console))
+
+        const numeros = [1,2,3,4,5], vocales = ["a", "e", "i", "o", "u"]
+
+        //Puedo tener tablas de arrays en la consola
+        console.table(numeros)
+        console.table(vocales)
+
+        const perro = {
+            nombre: "Yako",
+            raza: "Bichón Maltés",
+            anio_nacimiento: 2013
+        }
+
+        //Tabla para el objeto perro
+        console.table(perro)
+
+
+        //Esto sirve para saber cuanto tarda un bloque de código en ejecutarse, tiene dos partes el console.time
+        // que es el inicio y el final, el console.timeEnd. El texto de ambos tiene que ser igual, actúa como un identificador para saber cuando acaba
+        console.time("Cuanto tiempo tarda mi código")
+        const arreglo = new Array(100000000)
+        for (let i = 0; i< arreglo.length; i++) {
+            
+            arreglo[i] = i
+        }
+        console.timeEnd("Cuanto tiempo tarda mi código")
+
+      //  console.log(arreglo)
+
+
+        for (let i = 0; i<= 100; i++) {
+            //Console.count sirve para saber cuantas veces se ha ejecutado un código, tiene un id y luego aparece un número de las veces que se ha ejecutado
+            console.count("Código for")
+            console.log(i)
+        }
+
+
+        //console.assert sirve para realizar pruebas, en este caso que la x sea menor que la y, si esto es verdad la consola no imprimirá nada pero si la x es mayor que la y entonces se printea el mensaje que es el último valor pasado. 
+        let x = 5
+        let y = 2
+        let pruebaXY = "Se espera que x sea siempre menor que y"
+
+        console.assert(x<y,{x,y,pruebaXY})
+
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Ejercicios de JavaScript 2</h1>
+    <script>
+
+        /*
+        
+    5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
+    6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+    7) Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.
+    8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.
+        */
+
+        console.log("Ejercicio 5")
+
+        const invertirPalabras = (palabra = "") => (!palabra.trim()
+            ? console.warn("No has introducido una palabra") 
+            : console.log(palabra.split("").reverse().join(""))) 
+
+            //Split lo que hace es devolverme un array de cada letra por el separador "" en este caso es nada
+            //Reverse es un método de los arrays que permite darle la vuelta
+            //join sirve para que dado un array se pueda unificar con un caracter entre posiciones en este caso "", que sería nada
+            //join une el array y lo convierte a String
+            invertirPalabras("")
+            invertirPalabras("Hola mundo")
+            invertirPalabras("JavaScript es un lenguaje increible")
+
+        function invertirPalabras2 (palabra) {
+            
+            if(!palabra.trim())
+            return "No has introducido una palabra"
+
+            let palabraReves = ""
+
+            for(let i = palabra.length - 1; i >= 0; i--){
+                palabraReves += palabra.charAt(i)
+            }
+
+            return palabraReves
+        }
+
+        console.log(invertirPalabras2("Hola mundo"))
+        console.log(invertirPalabras2(""))
+
+        console.log("Ejercicio 2")
+
+        const contarTextoEnCadena = (texto = "", palabra = "") =>{
+
+            if(!texto) return console.log("No hay ningún texto")
+            if(!palabra) return console.log("No has introducido una palabra")
+
+            let i = 0
+            let contador = 0
+
+            //Terminaré el bucle cuando i valga -1 (cuando indexof devuelva menos 1 significa que no ha encontrado coincidencias en el texto)
+            while(i !==-1){
+                //texto.indexOf() esto busca en la variable texto la coincidencia 
+                //si se encuentra coincidencia la i valdrá la posición de donde se ha encontrado y volverá a buscar la siguiente (se incrementará luego la i en uno para buscar en la siguiente posición). Si no la encuentra devuelve -1 y nos saldremos del código
+                i = texto.indexOf(palabra,i)
+                if(i !==-1){
+                    i++
+                    contador++
+                }
+            }
+
+            return console.log(`La palabra ${palabra} aparece en el texto ${contador} ` + (contador === 1 ? `vez` : `veces`))
+        }
+
+        contarTextoEnCadena("Hola me llamo Hola Daniel","Hola")
+
+        console.log("Ejercicio 7")
+
+        const palindromo = (palabra = "") =>{
+            if(!palabra.trim()) return console.log("No hay ninguna palabra")
+
+            palabra = palabra.toLowerCase()
+            let alReves = palabra.split("").reverse().join("")
+
+            return (palabra === alReves) ? console.log(`La palabra ${palabra} es palíndromo, palabra original ${palabra}, palabra al revés ${alReves}`) 
+            : console.log(`La palabra ${palabra} no es palíndromo, palabra original ${palabra}, palabra al revés ${alReves}`)
+        }
+
+        palindromo()
+        palindromo("Daniel")
+        palindromo("Oso")
+
+    </script>
+    
+</body>
+</html>

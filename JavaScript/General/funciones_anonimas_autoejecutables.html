@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Funciones anónimas autoejecutables</h1>
+
+    <script>
+      //Es una función en la cual se engloba todo el código que se va a ejecutar, permitiendo encapsular el código. Se usaba mucho en jquery
+
+      //Función anónima autoejecutable
+
+      (function () {
+        console.log("Mi primer función anónima autoejecutada");
+      })(); //Es obligatorio poner el ;
+
+      (function (d,w,c) {
+        console.log("Mi segunda función anónima autoejecutada");
+        // d sería document 
+        //La funcionalidad de esto es poder abreviar los nombres, por ejemplo 
+        c.log("Hola")
+
+      })(document, window, console); //Es obligatorio poner el ;
+
+      //Hay varias formas de hacer lo mismo, una de ellas es:
+      +function (d,w,c) {
+        console.log("Mi segunda función anónima autoejecutada");
+        c.log("Hola")
+
+      }(document, window, console);
+
+      //Versión facebook
+      !function (d,w,c) {
+        console.log("Mi segunda función anónima autoejecutada");
+        c.log("Hola")
+
+      }(document, window, console);
+
+    </script>
+  </body>
+</html>

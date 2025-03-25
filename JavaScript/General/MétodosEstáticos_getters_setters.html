@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Métodos estáticos, getters y setters</h1>
+
+    <script>
+      //En JavaScript no existen los métodos publicos o privados como en otros lenguajes
+      //Todas las clases que generamos en JS son "públicas"
+
+      //Un método estático es aquel que se puede ejecutar sin necesidad de instanciar la clase
+
+      class Perro {
+        constructor(nombre, genero, tamanio) {
+
+          this.nombre=nombre;
+          this.genero=genero;
+          this.tamanio = tamanio;
+          //Puedo poner un método por defecto al instanciar un objeto
+          this.raza = null;
+        }
+
+        //Sobreescritura de métodos
+        sonar() {
+          console.log("Guau guau");
+        }
+        ladrar() {
+          console.log("Guaau guaau");
+        }
+
+        //Puedo ejecutar esto sin instanciar nada
+        static queEres() {
+          console.log("Soy un perro");
+        }
+
+         //Getters y setters, su sintaxis es así tiene que tener la palabra get y set delante
+        get getRaza(){
+        return this.raza;
+        }
+        set setRaza(raza){
+            this.raza = raza
+        }
+      }
+
+      Perro.queEres()
+
+      const Yako = new Perro("Yako", "Macho", "Pequeño")
+
+      //JavaScript obtiene los métodos getters y setters como atributos, no como funciones
+      console.log(Yako.getRaza)
+      //Para los setters se realiza así
+      Yako.setRaza = "Bichón Maltés"
+      console.log(Yako.getRaza)
+
+
+
+     
+
+    </script>
+  </body>
+</html>

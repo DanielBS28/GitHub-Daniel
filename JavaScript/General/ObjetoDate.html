@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Objeto date</h1>
+    <script>
+
+        //Imprimimos el día de hoy por consola
+        console.log(Date())
+
+        let fecha = new Date();
+        //Día del mes
+        console.log(fecha.getDate())
+        //Día de la semana DLMXJVS - 0123456
+        console.log(fecha.getDay())
+        //Mes EFMAMJLASOND - 01234567891011
+        console.log(fecha.getMonth())
+        //Año
+        console.log(fecha.getFullYear())
+        //Hora
+        console.log(fecha.getHours())
+        console.log(fecha.getMinutes())
+        console.log(fecha.getSeconds())
+        console.log(fecha.getMilliseconds())
+
+        //Obtener el día en String
+        console.log(fecha.toString())
+        console.log(fecha.toDateString())
+        console.log(fecha.toLocaleString())
+        console.log(fecha.toLocaleDateString())
+        console.log(fecha.toLocaleTimeString())
+
+        //Uso horario diferencia respecto a GMT
+        console.log(fecha.getTimezoneOffset())
+
+        //Horario de Londrés
+        console.log(fecha.getUTCHours())
+
+        //Este es el número de segundos han pasado desde el 1 de enero de 1970 (timestamp)
+        //Moment js es una muy buena librería para controlar tiempos
+        console.log(Date.now())
+
+        //Podemos pasarle al constructor Date una fecha concreta, hay que tener en cuenta los números por la posición
+        let cumpleañosDaniel = new Date(2003,3,28)
+        console.log(cumpleañosDaniel)
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

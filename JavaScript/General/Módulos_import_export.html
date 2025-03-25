@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Podemos poner el script de esta forma si está en otro lugar para que se ejecute desde el archivo .js, aunque lo mejor es ponerlo antes de la etiqueta de cierre body por que si el archivo js es muy pesado, tardará mas en cargar y eso hará que también tarde más en cargar el html y los estilos, por eso es mejor ponerlo al final en vez de aqui en la cabecera, aunque a veces puede que una libreria exija que se ponga aquí-->
+   
+</head>
+<body>
+
+    <!--Los módulos permiten llamar archivos javascript desde un archivo a otro. Lo ideal es que los códigos estén en archivos .js-->
+    <h1>Módulos import y export</h1>
+
+    <!--El type module es imprescindibe si se van a usar módulos, ya que las importaciones darían error. Para dar soporte a navegadores que no soporten esto habría que poner:
+     <script src="/JS/no-módulos.js" nomodule></script>
+
+     y en este archivo poner un console log diciendo que el navegador no soporta EC6, la diferencia es que no tiene type, en el archivo no modulos podríamos hacer un codigo para ese navegador que no soporta EC6, el nomodule como atributo es para navegadores modernos para que no carguen los scripts "antiguos"
+    -->
+    <script src="/Archivos JS/módulos.js" type="module"></script>
+    <script src="/Archivos JS/no-modulos.js" nomodule></script>
+</body>
+</html>

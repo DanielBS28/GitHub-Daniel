@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Operador cortocircuito</h1>
+
+    <script>
+
+        /*
+        Cortocircuito OR - Cuando el valor de la izquierda en la expresión siempre pueda validar a true, es el valor que se cargará por defecto.
+
+        Cortocircuito AND - Cuando el valor de la izquierda en la expresión siempre pueda validar a false, es el valor que se cargará por defecto
+        */
+
+        //Cortocircuito, ahora se realiza de esta manera,si no hay parametro se toma desconocido de esta manera
+        function saludar(nombre = "Desconocido"){
+            console.log(`Hola ${nombre}`)
+        }
+
+        //Antiguamente se realizaba así: el cortocircuito 
+        function saludar2(nombre) {
+          // si recibe parametro se pone el de la izquierda por que es true, si no toma el valor por defecto que es "Desconocido"
+          
+          nombre = nombre || "Desconocido"
+          console.log(`Hola ${nombre}`)
+        }
+
+        //Sin parametro 
+        saludar2()
+        //Con parametro
+        saludar2("Daniel")
+
+        //truty, siempre imprime la derecha
+        console.log(19 || "Valor derecha")
+        console.log("Cadena" || "Valor derecha")
+
+        //Si es falso (falsy) toma el valor de la derecha
+        console.log(false || "Valor derecha")
+        console.log(null || "Valor derecha")
+
+
+        //CORTOCIRCUITO AND
+        //Es lo contrario al or si el de la izquierda es falso, toma el valor de la izquierda
+         //truty, siempre imprime la derecha 
+         console.log(19 && "Valor derecha")
+        console.log("Cadena" && "Valor derecha")
+
+        //Si es falso (falsy) toma el valor de la izquierda
+        console.log(false && "Valor derecha")
+        console.log(null && "Valor derecha")
+
+
+
+
+    </script>
+</body>
+</html>

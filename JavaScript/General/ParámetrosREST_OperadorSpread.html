@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Parámetros REST & operador Spread</h1>
+    <script>
+        //Los parámetros rest son una forma de virtualmente agregando parámetros infinitos, se identifican con:
+
+        //Es como el var args de Java
+        function sumar(a,b,...c){
+            resultado = a+b
+
+            //Recorro con un for each el array de parametros que no se cuantos se han pasado
+            c.forEach(function(n){
+                //Si existe c, lo voy sumando al resultado cada iteración (cada iteración es la n y es un número)
+                resultado += n
+            })
+
+            return resultado;
+        }
+
+        console.log(sumar(1,2))
+        //A partir de aquí es cuando entra el parámetro rest, se usa mucho en frameworks
+        console.log(sumar(1,2,3))
+        console.log(sumar(1,2,3,4))
+
+        //EL SPREAD OPERATOR
+        const arreglo1 = [1,2,3,4,5], arreglo2 = [5,6,7,8]
+        console.log(arreglo1, arreglo2)
+
+        //Esto me creará un arreglo de dos posiciones pero cada posición es un array, no es lo que quiero
+        const arreglo3 = [arreglo1, arreglo2]
+        console.log(arreglo3)
+
+        //Yo lo que quería es tener un nuevo array pero con los valores del arreglo1 y arreglo2, para ello usaremos
+        //el spread operator, ahora el arreglo4 tendrá la mezcla de los arreglo1 y 2 pero es un solo array
+        const arreglo4 = [...arreglo1, ...arreglo2]
+
+        console.log(arreglo4)
+
+
+    </script>
+    
+</body>
+</html>

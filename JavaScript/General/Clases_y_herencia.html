@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Clases y herencia</h1>
+
+    <script>
+      //Desde 2015 podemos escribir clases, que JavaScript internamente las gestiona como prototipos
+
+      //Las clases no reciben parámetros
+      class Animal {
+
+        //Son los constructores los que reciben los parámetros
+        constructor(nombre, genero){
+        //Atributos
+        this.nombre = nombre;
+        this.genero = genero;
+    }
+        //Métodos
+        //Hay que poner los métodos de esta manera para que se asocien a la clase, aquí no hay que 
+        //sacar los métodos afuera como en los prototipos para que sea mas eficiente
+        sonar() {
+          console.log("Hago sonidos");
+        }
+        saludar() {
+          console.log(`Hola, me llamo ${this.nombre}`);
+        }
+    }
+
+    //Aunque escribamos clases, JavaScript lo maneja internamente como prototipos. Las clases es lo mismo pero 
+    //con una sintaxis mas sencilla
+    const Mimi = new Animal("Mimi", "Hembra")
+    const Scooby = new Animal("Scooby", "Macho")
+
+    console.log(Mimi)
+    console.log(Scooby)
+
+    Scooby.sonar()
+    Scooby.saludar()
+
+    //HERENCIA
+
+    class Perro extends Animal{
+
+        constructor(nombre, genero, tamanio){
+
+            //Con el método super() se manda a llamar al constructor de la clase padre
+            super(nombre, genero)
+            this.tamanio = tamanio
+        }
+
+        //Sobreescritura de métodos
+        sonar() {
+          console.log("Guau guau");
+        }
+        ladrar(){
+            console.log("Guaau guaau")
+        }
+    }
+
+    const Yako = new Perro("Yako","Macho", "Pequeño")
+
+    //Vemos que los métodos se han sobreescrito
+    Yako.ladrar()
+    Yako.saludar()
+    Yako.sonar()
+
+    console.log(Yako)
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <h1>Ejercicios de iniciación JavaScript</h1>
+    <script>
+      /*
+1) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
+
+2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
+
+3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].
+4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
+        */
+
+        //Ejercicio1
+
+        function contarCaracteres(palabra){
+
+            let contador = 0
+
+            //Se comprueba si la palabra está vacia
+
+            //También podia haber echo palabra === "" o palabra.legth === 0
+            if(!palabra.trim()){
+                console.warn("Has introducido una palabra vacía")
+            }else{
+            for(let i = 0; i < palabra.length; i++){
+                contador++
+            }
+        }
+
+            console.log(`La palabra ${palabra} tiene ${contador} caracteres`)
+          
+        }
+
+        console.log("Ejercicio 1")
+        contarCaracteres("Hola mundo")
+
+        //De manera expresada el ejercicio 1:
+
+        //Si solo hay una linea en la arrow function no hace falta poner return, pero si hay mas dos sentencias hay que poner {} y un valor de return 
+        const contarLetras = (cadena = "") =>
+            (!cadena.trim()) 
+                ? console.warn("No hay ninguna cadena") 
+                : console.log(`La cadena ${cadena} tiene ${cadena.length} caracteres`)
+
+        function separarPorNumero(palabra, cantidad){
+
+            let palabraRecortada = ""
+
+            for(let i = 0; i < cantidad; i++){
+                palabraRecortada += palabra.charAt(i)
+            }
+
+            return palabraRecortada
+        }
+        console.log("Ejercicio 2")
+        console.log(separarPorNumero("Hola mundo",4))
+
+        //Con arrow function
+        //Hemos puesto undefined por si acaso se olvida la longitud que sea hasta el final con undefined
+        const recortarPalabra = (palabra = "", longitud = undefined) =>
+        (!palabra.trim())
+            ? console.warn("Has ingresado una palabra vacia")
+            : console.info(palabra.slice(0,longitud)) //También podía haber utilizado substring
+            //La función slice permite cortar una palabra desde un inicio, en este caso un 0 hasta la variable que se la ha pasado como parametro (que es un número)
+
+            recortarPalabra("Hola mundo",4)
+            recortarPalabra("Hola mundo") //Si se me ha olvidado poner el segundo parametro coge undefined como valor por default
+
+            //Podría haber concatenido otro operador ternario para solucionar este problema
+            const recortarPalabra2 = (palabra = "", longitud = undefined) =>
+            (!palabra.trim())
+                ? console.warn("Has ingresado una palabra vacia")
+                : (longitud === undefined) 
+                    ? console.warn("Se te ha olvidado poner el segundo parámetro")
+                    : console.log(palabra.slice(0,longitud))
+
+            recortarPalabra2()
+            recortarPalabra2("Hola mundo")
+            recortarPalabra2("Hola mundo",4)
+
+            console.log("Ejercicio 3")
+            const cadenaArreglo = (cadena = "", caracter = undefined) => (!cadena.trim()) 
+                ? console.log("No has ingresado una cadena")
+                : (caracter === undefined) 
+                ? ("No has ingresado el caracter separador")
+                : console.log(cadena.split(caracter))
+
+                cadenaArreglo("Hola soy Daniel", " ")
+                cadenaArreglo("Hola")
+                cadenaArreglo("",5)
+
+
+                console.log("Ejercicio 4")
+                const repetirPalabra = (palabra = "", longitud = undefined) =>{
+                    if(!palabra.trim()) return console.warn("No ingresaste un texto")
+                    if(longitud === undefined) return console.warn("No ingresaste una longitud para la palabra")
+                    if(longitud === 0) return console.error("Has ingresado 0 veces que se pueda repetir la palabra")
+                    if(Math.sign(longitud) === -1) return console.error("Has introducido un número negativo")
+
+                    //Si no se han cumplido las demás condiciones es por que los datos son correctos y empiezo a repetir la palabra
+
+                    for(let i = 0; i< longitud; i++)
+                        console.log(`Palabra: ${palabra}, vuelta: ${i+1}`)
+
+                }
+
+                repetirPalabra("Daniel",4)
+                repetirPalabra("",4)
+                repetirPalabra("Daniel",-1)
+                repetirPalabra("Daniel",0)
+                repetirPalabra("Daniel")
+
+    </script>
+  </body>
+</html>

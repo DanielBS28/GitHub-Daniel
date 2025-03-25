@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Callbacks</h1>
+
+    <script>
+      /*
+Un callback es simplemente una función que se pasa como argumento a otra función y se ejecuta más tarde, 
+se va a ejecutar después de que otra lo haga..*/
+
+//Ejemplo 1
+
+function saludo(nombre, callback) {
+    console.log("Hola, " + nombre);
+    callback();
+}
+
+function despedida() {
+    console.log("Adiós");
+}
+
+saludo("Juan", despedida);
+
+//Ejemplo 2
+      function cuadradoCallback(valor, callback) {
+        setTimeout(() => {
+          callback(valor, valor * valor);
+        }, 0 | (Math.random() * 1000));
+      }
+
+      cuadradoCallback(0, (value, result) => {
+        console.log("Inicia callback");
+        console.log(`callback: ${value}, ${result}`);
+        cuadradoCallback(1, (value, result) => {
+          console.log(`callback: ${value}, ${result}`);
+        });
+      });
+
+    </script>
+  </body>
+</html>

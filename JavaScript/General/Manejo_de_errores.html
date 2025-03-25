@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Manejo de errores</h1>
+
+    <script>
+
+    //Manejo de errores en JavaScript, en el try se agrega el código a evaluar, si hay algún error
+    // el catch captura cualquier error surgido o lanzado en el try, el finally es menos usado y no es obligatorio
+    // pero su función es de ejecutarse al final de un bloque try catch.
+
+        try {
+           console.log("Hola")
+           noexiste; 
+           console.log("Segundo mensaje") //Esto no se ejecuta por que la linea de arriba da un error
+        } catch (error) {
+            console.log("Hubo un error")
+            //Para imprimir el error por consola, no lo pone en rojo por que está en el try catch pero lo imprime
+            //Si hay un error fuera del try catch se pone se color rojo el error
+            console.log(error) 
+        }finally{
+            console.log("Esto es el finally, siempre se ejecuta al final del bloque trycatch") 
+        }
+
+        //Esto es un try catch personalizado para comprobar si la variable número es un número, si no es un número
+        // se lanza el throw new Error y va al trycatch (el error se puede especificar un tipo), si lo dejamos como Error es el general
+
+        try {
+            let numero = "j"
+            if(isNaN(numero)){
+                throw new Error("El carácter introducido no es un número")
+            }
+            console.log("Hola")
+            console.log(numero*numero)
+        } catch (error) {
+            //El error es el mensaje pasado en el throws, si no se cumple el thowrs entonces el error es lo que ponga JavaScript
+            console.log(`Se produjo el siguiente error: " + ${error}`)
+        }
+    </script>
+</body>
+</html>

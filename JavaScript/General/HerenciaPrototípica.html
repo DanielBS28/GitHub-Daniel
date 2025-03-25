@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Herencia prototípica</h1>
+
+    <script>
+      function Animal(nombre, genero) {
+        //Atributos
+        this.nombre = nombre;
+        this.genero = genero;
+
+            this.saludar = function(){
+                console.log(`Hola, me llamo ${this.nombre}`)
+            }
+      }
+
+      //Perro heredará de animal
+      function Perro(nombre, genero, tamanio) {
+        this.super = Animal; //Esto crea la variable super y la iguala al la función constructora Animal
+        this.super(nombre, genero); //Llamamos al super pasándole los parametros de nombre y genero
+        this.tamanio = tamanio;//Tamanio es un atributo del perro y no del animal 
+      }
+
+      //Perro está heredando de animal
+      Perro.prototype = new Animal();
+      Perro.prototype.constructor = Perro;
+
+      //Sobreescritura de métodos del prototupo padre en el hijo
+      /*
+      Para que la sobreescritura funcione correctamente, debes definir los métodos en el prototype de Animal, en lugar de dentro del constructor de Animal*/
+
+      Animal.prototype.sonar = function(){
+                console.log("Hago sonidos")
+            }
+      Perro.prototype.sonar = function(){
+        console.log("Soy un perro y mi sonido es un ladrido")
+      }
+
+      Perro.prototype.ladrar = function() {
+        console.log("Guaau Guaau")
+      }
+
+      const Yako = new Perro("Yako", "Macho", "Pequeño");
+      console.log(Yako)
+
+      const Conejo = new Animal("Conejo", "Macho")
+      console.log(Conejo)
+
+      Conejo.saludar()
+      Conejo.sonar()
+
+      //Se ha sobreescrito el método sonar de manera correcta
+      Yako.ladrar()
+      Yako.sonar()
+      Yako.ladrar()
+
+
+    </script>
+  </body>
+</html>

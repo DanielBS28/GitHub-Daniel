@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Prototipos HTML</h1>
+
+    <script>
+        // En POO hay 4 conceptos muy importantes que hay que tener en en cuenta
+        /*
+        Clases - modelo a seguir
+        Objeto - es una instancia de una clase
+        Atributos - es una caracteristica o propiedad del objeto (son variables dentro de un objeto)
+        Métodos - son las acciones que un objeto puede realizar (son funciones dentro de un objeto)
+
+        JavaScript es un lenguaje orientado a objetos basado en prototipos no en clases, un prototipo es un mecanismo
+        por el cual un objeto va a poder heredar de un objeto padre caracteristicas (atributos y métodos)
+
+        */
+
+        const animal = {
+            nombre: "Snoopy",
+            sonar(){
+                console.log("Hago sonidos")
+            }
+        }
+
+        const animal2 = {
+            nombre: "Lola Bunny",
+            sonar(){
+                console.log("Hago sonidos")
+            }
+        }
+
+        console.log(animal) //Es un prototipo tipo objeto
+        console.log(animal2) //Es un prototipo tipo objeto
+
+
+        //Función constructora (se crea una sola vez y puedo generar instancias) es para crear prototipos
+        function Animal(nombre, genero){
+
+            //Atributos
+            this.nombre = nombre
+            this.genero = genero
+
+            //Métodos
+            //Hay que ponerlo asi para que no de error
+            this.sonar = function(){
+                console.log("Hago sonidos")
+            }
+            this.saludar = function(){
+                console.log(`Hola, me llamo ${this.nombre}`)
+            }
+        }
+
+        //Hemos creado dos animales pero con una función constructora, de manera que el prototipo es un objeto, pero el constructor de tipo Animal, a diferencia de antes que teniamos que estar copiando y pegando para crear los objetos de manera manual.
+        const Yako = new Animal("Yako", "Macho"), Oliver = new Animal ("Óliver", "Macho")
+
+        console.log(Yako)
+        console.log(Oliver)
+
+        Yako.saludar()
+        Oliver.saludar()
+
+        /*
+        Cuando tenemos una función constructora la mejor práctica es solo tener atributos en ella, los métodos serían
+        duplicados en cada instancia y si tenemos 1000 animales tendríamos 2000 funciones, siendo poco escalable
+        
+        lo mejor es hacer lo que vemos aquí abajo:*/
+
+        function Animal2 (nombre, genero){
+            //Atributos
+            this.nombre = nombre
+            this.genero = genero
+        }
+
+        //Ahora los métodos están asociados al prototipo animal y no a la función constructora siendo más escalable
+        //y ahorrando espacio en memoria
+        Animal2.prototype.sonar = function(){
+                console.log("Hago sonidos")
+            }
+        Animal2.prototype.saludar = function(){
+                console.log(`Hola, me llamo ${this.nombre}`)
+            }
+            const Nico = new Animal2("Nico", "Macho")
+            Nico.saludar() //Función asociada al prototipo
+            console.log(Nico) 
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>alert, confirm y prompt</h1>
+
+    <script>
+        //Alert confirm y prompt permiten interacción con el usuario a través del navegador
+
+        //alert Muestra un mensaje de alerta
+        window.alert("Esto es una alerta")
+
+        //confirm Muestra un mensaje y tiene un mensaje de confirmación 
+        window.confirm("Hola, esto es una confirmación")
+
+        //prompt muestra un mensaje y se puede obtener un valor
+        window.prompt("Hola esto es un prompt y le permite al usuario ingresar un valor")
+
+        //No es necesario pomer el window. podría haber puesto solamente confirm o alert o prompt y funcionaria igual
+
+        //También podiamos haber guardado el valor en una variable
+
+        let alerta = alert("Hola esto es una alerta")
+
+        let prompt_valor = prompt("Introduzca un valor")
+
+        let confirmación = confirm("Confirmación")
+
+        console.log(prompt_valor)//devuelve el valor que el usuario ha introducido, si no hay nada o pulsa cancelar es null
+        console.log(confirmación)//true o false
+        console.log(alerta)//da undefined no es necesario guardarla en una variable
+
+    </script>
+</body>
+</html>

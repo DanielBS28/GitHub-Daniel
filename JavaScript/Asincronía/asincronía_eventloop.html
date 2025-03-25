@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Asíncronia y Event Loop</h1>
+
+    <script>
+      //Es importante entender unos conceptos previos
+
+      /*
+        - JavaScript es un lenguaje single thread
+
+        JavaScript usa un modelo asincrono y no bloqueante con un loop de eventos implementado en un solo 
+        hilo para operaciones de entrada y salida.
+
+        La asíncronia permite realizar largas solicitudes de red sin bloquear el hilo principal, si no 
+        mientras que se realiza una solicitud a una API por ejemplo, la web se quedaría sin responder ya que el hilo principal estaría bloqueado
+
+        - Procesamiento single thread y multi thread: Los hilos son las ejecuciones básicas de cada proceso, si es monohilo solo hay un hilo, mientras que si es multithread tiene varios hilos.
+
+        - Operaciones de CPU y operaciones I/O: En un procesamiento podemos tener operaciones de CPU que son los procesos que se ejecutan en el CPU, por ejemplo un error de lógica con un bucle for, que puede trabarse el ordenador, las de entrada y salida son las que van a estar esperando el recursos que se ha solicitado, por ejemplo consultas a una API, pasarela de pagos con confirmación del pago.
+
+        - Operaciones concurrentes y paralelas: La concurrencia es cuando dos o mas tareas progresan simultaneamente (una podía haber empezado antes otras después...), mientras que de forma paralela es cuando dos o más tareas se ejecutan al mismo tiempo (no se ejecuta una detrás de otra van todas al mismo tiempo)
+
+        - Operaciones bloqueantes y no bloqueantes: Es la fase de espera cada vez que se ejecuta el código, es una operación que no va a a devolver al control a la aplicación hasta que no haya completado su operación. No bloqueante es cuando se ejecutan operaciones y devuelve el control al hilo principal no importando si han terminado o no su tarea.
+
+        - Operaciones síncronas y asíncronas: Se refiere a cuando tendrá lugar la respuesta, sincrono es que está esperando el resultado en el presente y luego sucede otra tarea. Mientras que asíncrono la respuesta sucede en un futuro, se ejecuta y no sabe cuando va a venir la respuesta, suelta el control y se lo da al hilo principal, el código asincrono suele ser codigo no bloqueante mientras que el sincrono es bloqueante. 
+
+        */
+
+      //Código sincrono bloqueante
+
+      //Esto se imprime de manera ordenada ya que primero se imprime codigo sincrono, inicio
+      //luego se llama a la función uno, imprime uno, llama a la función dos e imprime dos, luego el tres
+      //y finalmente un fin de manera ordenada.
+      (() => {
+        console.log("Código síncrono");
+        console.log("Inicio");
+
+        function dos() {
+          console.log("Dos");
+        }
+
+        function uno() {
+          console.log("Uno");
+          dos();
+          console.log("Tres");
+        }
+
+        uno();
+        console.log("Fin");
+      })();
+
+      //Código asíncrono no bloqueante
+      console.log("*****************");
+
+      (() => {
+        console.log("Código asíncrono");
+        console.log("Inicio");
+
+        function dos() {
+            setTimeout(() => {
+            console.log("Dos")
+        }, 1000);
+         }
+
+
+        function uno() {
+            setTimeout(function () {
+            console.log("Uno")
+        }, 0);//No tarda nada en ejecutarse, pero va a la pila de llamada y eso hace que tarde más en ejecutarse, hasta el final esto es debido a la pila de llamadas el set time out actua como si por ejemplo fuera una peticion a una API y luego pasa a la callback queue, saldrá de ese paso cuando todo el código bloqueante termine en estre caso hasta que finalice el último console.log("fin")
+
+        //Podemos meter el código en este enlace para ver estos pasos http://latentflip.com/loupe/
+        dos();
+        console.log("tres")        
+        }
+
+        uno();
+        console.log("Fin")
+      })();
+    </script>
+  </body>
+</html>

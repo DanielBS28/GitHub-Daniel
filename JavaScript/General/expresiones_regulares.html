@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Expresiones regualares</h1>
+
+    <script>
+        //Una expresión regular es un patrón de caracteres que forman un patrón de búsqueda de cadenas de texto hay muchas fuentes de búsqueda para expresiones regulares que ya están echas.
+
+        let cadena = "Hola daniel"
+        //Recibe dos parametros a la hora de realizar expresiones,regulares, el primero es el patrón y el segundo las banderas que son pequeñas modificaciones para la expresión regular por ejemplo g sería buscar todas las coincidencias del patrón (no solo la primera coincidencia), i sería que no diferencia entre mayusculas y minusculas
+        let expReg = new RegExp("daniel","g")
+
+
+        //Otra manera de hacer las expresiones regulares a través de dos barras y el patrón
+
+        let expReg2 = /daniel/;
+
+        //Para validar este patrón podemos hacerlo con test con la expresionregular.test(aquí va la cadena a valorar si se cumple ese patrón) si se cumple devuelve verrdadero, si no devuelve falso
+
+        console.log(expReg2.test(cadena)) 
+        //Devuelve true por que ha encontrado la palabra daniel en toda la cadena
+
+        //También lo podriamos haber echo con exec, devuelve un array con la posición donde lo encontro y la línea.
+        console.log(expReg.exec(cadena))
+
+        //Es mejor la expresión dos para hacer expresiones regualares con /expresion/ tiene caracteres especiales or rangos que actuarian como las banderas.
+
+        //Esto seria para para un digito del 0-9
+        let expReg3 = /\d/
+
+        //Esto seria para un número del 1 al 9
+        let expReg4 = /[0-9]/
+
+        //Los corchetes son repiticiones, en este caso tiene que encontrar lorem dos veces, si es así devuelve true, si no devuelve false
+        let expReg5 = /lorem{2}/
+        //Esto sería para de 1 a 3 repiticiones de la palabra lorem
+        let expReg6 = /lorem{1,3}/
+
+         //Esto sería para de 1 a infinitas repiticiones de la palabra lorem
+        let expReg7 = /lorem{1,}/
+
+    </script>
+</body>
+</html>

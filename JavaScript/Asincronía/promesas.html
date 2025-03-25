@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Promesas</h1>
+    
+    <script>
+
+    //Vimos los callback anteriormente es más utilizado, pero si hay muchas concatenaciones hay que manipular los errores uno a uno.
+    //Para resolver esto JavaScript tiene el mecanismo de las promesas. (es parecido a un if else)
+
+    //Función con callback
+
+    function cuadradoCallback(valor, callback) {
+        setTimeout(() => {
+          callback(valor, valor * valor);
+        }, 0 | (Math.random() * 1000));
+      }
+
+      cuadradoCallback(0, (value, result) => {
+        console.log("Inicia callback");
+        console.log(`callback: ${value}, ${result}`);
+        cuadradoCallback(1, (value, result) => {
+          console.log(`callback: ${value}, ${result}`);
+        });
+      });
+
+      //Función con promesa
+
+      function cuadradoPromise(valor) {
+
+        return new Promise((resolve,reject) =>{
+
+            //Resolve es la parte verdadera, mientras que si hay algún error se devuelve la parte falsa (reject)
+            if(typeof valor !== "number") return Promise.reject(`Error ${valor} no es un número`);
+
+            setTimeout(() => {
+                resolve({
+                    valor: valor,
+                    result: valor*valor
+                });
+
+        }, 0 | (Math.random() * 1000));
+        });
+      }
+
+      cuadradoPromise(0)
+      .then((obj) =>{
+        console.log("Inicia promise");
+        console.log(`Promise: ${obj.valor}, ${obj.result}`);
+        console.log(obj)
+        return cuadradoPromise(1)
+      }).then((obj) =>{
+        console.log("Inicia promise");
+        console.log(`Promise: ${obj.valor}, ${obj.result}`);
+        return cuadradoPromise("A") //Aquí se ejecutará el catch
+      }).then((obj) =>{
+        console.log("Inicia promise");
+        console.log(`Promise: ${obj.valor}, ${obj.result}`);
+      }).catch(err => console.error(err));
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuración HTML</title>
+</head>
+<body>
+    <h1>Destructuración</h1>
+
+    <script>
+
+        //la destructuración sirve para guardar atributos o elementos de manera fácil en variables separadas
+        const numeros = [1,2,3]
+
+        //Sin destructuración (lo hemos hecho a mano la asignación de las variables)
+        let uno = numeros[0], dos = numeros[1], tres = numeros[2]
+        console.log(uno, dos, tres)
+
+        //Con destructuración (Hemos credo directamente las variables asignando el array números)
+        const [one, two, three] = numeros
+        console.log(one, two, three)
+
+        //Vamos a ver lo con objetos
+        const persona ={
+            nombre: "Daniel",
+            apellido: "Sánchez",
+            edad: 35
+        }
+
+        //Con objetos es importante que las variables se llamen igual que las del objeto, si no daría undefined en esa varible, el orden de las variables si están bien puestas el nombre da igual el orden
+        let {nombre, apellido, edad} = persona
+        console.log(nombre, apellido, edad)
+
+
+
+
+    </script>
+</body>
+</html>

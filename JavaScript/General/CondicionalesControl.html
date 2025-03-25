@@ -10,7 +10,89 @@
 
     <script>
 
+        //if else funciona igual que en otros lenguajes que conozco
         
+        let edad = 17 
+
+        if(edad >= 18){
+            console.log("Eres mayor de edad")
+        }else
+        console.log("Eres menor de edad")
+
+        //Lo mismo pero al revés
+        if(edad <= 17)
+        console.log("Eres menor de edad")
+        else
+        console.log("Eres mayor de edad")
+
+        //Varios if else
+        //Buenos días 6-12h
+        //Buenas tardes 13h-20h
+        //Buenas noches 21h-23h
+        //Dormir
+        let hora = 7
+        if(hora >= 6 && hora <= 12)
+        console.log("Buenos días")
+        else if(hora >12 && hora <=20)
+        console.log("Buenas tardes")
+        else if(hora >20 && hora <=23)
+        console.log("Buenas noches")
+        else 
+        console.log("Dejame dormir")
+
+        //El operador ternario condición ? verdadero : falso
+        let eresMayor = edad >=18 ? "Eres mayor de edad" : "Eres menor de edad"
+        console.log(eresMayor)
+        console.log(edad >=18 ? "Eres mayor de edad" : "Eres menor de edad")
+
+        //Mejor práctica para organizar el código con el operador ternario
+        edad >=18 ? 
+        "Eres mayor de edad" : 
+        "Eres menor de edad"
+
+        //Switch case
+        /*
+        Domingo 0
+        Lunes 1
+        Martes 2
+        Miercoles 3
+        Jueves 4
+        Viernes 5
+        */
+
+        /*El switch case funciona con un valor que se le pasa y dependiendo de ese valor 
+        hay diferentes cases, si ese valor coincide con el case se ejecuta todo lo que haya debajo hasta el 
+        break, el break indica el final del switch case y nos salimos (si no ponemos break
+        el switch continuaría por los siguientes casos hasta el final), el default es el caso por el cual no se 
+        cumple ningún case.
+        */
+       let dia = 1
+        switch (dia) {
+            case 0:
+                console.log("Domingo")
+                break;
+            case 1:
+                console.log("Lunes")
+                break;
+            case 2:
+                console.log("Martes")
+                break;
+            case 3:
+                console.log("Miércoles")
+            break;
+            case 4:
+                console.log("Jueves")
+                break;
+            case 5:
+                console.log("Viernes")
+                break;
+            case 6:
+                console.log("Sábado")
+                break;
+            default:
+                console.log("No es un día válido")
+                break;
+        }
 
     </script>
 </body>

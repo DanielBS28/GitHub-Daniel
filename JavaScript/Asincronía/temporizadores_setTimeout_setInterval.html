@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Temporizadores setTimeout y setInterval</h1>
+
+    <script>
+
+        console.log("Inicio")
+        setTimeout(() => {
+            //Esto se ejecuta una sola vez
+            console.log("Ejecutando un setTimeOut después de tres segundos")
+        }, 1000); //Se ejecutará esta función cuando hayan pasado tres segundos
+
+
+        //En el set interval se ejecuta indefinidamente en cada cierto intervalo de tiempo configurado
+        //en este caso cada 5 segundos
+        setInterval(() => {
+            console.log("Ejecutando un setinterval después de cinco segundos")
+        }, 5000);
+
+        //Esto es un ejemplo de un reloj por consola que se ejecuta cada segundo e imprime la hora con segundos
+        // por cada segundo que pase
+        setInterval(() => {
+            console.log(new Date().toLocaleTimeString())
+        }, 1000);
+
+        //Podemos parar el set interval o el set time out si lo guardamos en una variable y ponemos un clear
+
+        /*
+
+        Esto es util por ejemplo cuando queramos hacer un reloj digital que inicio y pausa 
+
+        CON SET INTERVAL 
+
+         let temporizador = setInterval(() => {
+            console.log(new Date().toLocaleTimeString())
+        }, 1000);
+
+        clearInterval(temporizador)
+        console.log("después del clear")
+ 
+        CON SET TIMEOUT
+
+         let temporizador = setTimeout(() => {
+            console.log(new Date().toLocaleTimeString())
+        }, 1000);
+
+        clearTimeout(temporizador)
+        console.log("después del clear")
+        */
+
+    </script>
+    
+</body>
+</html>
