@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Promesas en JavaScript</h1>
+
+    <script>
+
+        //Imaginemos que tenemos un array de objetos de peliculas
+        
+        const datos = [{
+            id: 1,
+            title: 'Iron Man',
+            year: 2008
+        },{
+            id: 2,
+            title: 'Spiderman: Homecoming',
+            year: 2017
+        },{
+            id: 3,
+            title: 'Avengers: Endgame',
+            year: 2019
+        }]
+
+        const getDatos = () =>{
+            return datos;
+        }
+
+        //Esto es síncrono, pero si fuera una petición a una API iría por la red y eso ya son unos segundos que perdemos...
+        console.log(getDatos())
+
+        //Vamos a ver este ejemplo simulado con un setTimeout para esperar un poco de tiempo (asincronía)
+
+        const getDatos2 = () =>{
+            setTimeout(()=>{
+                return datos;
+            },2000)
+        }
+
+        //Si imprimimo esto sin nada más dará undefined por que hay asíncronia el dato está vacio por que se ha ejecutado antes esto que el return datos
+        console.log(getDatos2())
+
+        //Para resolver esto existen las promesas que es un objeto en JavaScript que permite ejecutar un trozo de código y cuando esté listo se devuelve, y si hay un error se devuelve ese error.
+
+        //Veamos como se resuelve
+
+        const getDatos3 = () =>{
+
+            //Ahora devolvemos el objeto promise para resolver esto
+
+            //Recibe como parametros dos funciones, una que es resolve y otra reject
+            return new Promise((resolve,reject) =>{
+
+                //Si todo va bien llamamos a la función resolve y le pasamos datos
+                setTimeout(() =>{
+                resolve(datos)
+            }, 2000)
+            })}
+
+            //Para recuperar datos llamamos a la función getDatos3 y el then sirve para la parte del resolve la parte que resuelve bien mientras que el catch sería el reject que en el caso de arriba no hay
+
+            getDatos3().then((datos) =>{
+
+                console.log(datos)
+            })
+
+            
+     
+
+
+
+    </script>
+</body>
+</html>

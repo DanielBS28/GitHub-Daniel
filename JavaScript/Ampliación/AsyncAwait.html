@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Async Await</h1>
+
+    <script>
+      const datos = [
+        {
+          id: 1,
+          title: "Iron Man",
+          year: 2008,
+        },
+        {
+          id: 2,
+          title: "Spiderman: Homecoming",
+          year: 2017,
+        },
+        {
+          id: 3,
+          title: "Avengers: Endgame",
+          year: 2019,
+        },
+      ];
+
+      //Vamos a ver este ejemplo simulado con un setTimeout para esperar un poco de tiempo (asincronía)
+      const getDatos = () => {
+        setTimeout(() => {
+          return datos;
+        }, 2000);
+      };
+
+      const datosFetched = getDatos();
+
+      console.log(datosFetched); //Esto da undefined
+
+      /*Vamos a ver el concepto de await y async, es otra forma de poder esperar a que se ejecuta un trozo de código, pero es una manera que se ve de forma más secuencial, aunque hace lo mismo que los callbacks y promesas*/
+
+      //Hay que envolver a la función get datos en una función con la palabra async delante, se podría haber echo como una función declarada con la palabra async antes, pero yo lo quería hacer con una arrow ya que tengo ejemplos de lo otro en la otra carpeta, basicamente el async convierte una función en asíncrona, haciendo que siempre devuelva una promesa. mientras que await hace que la ejecución espere hasta que una promesa se resuelva. Solo se puede usar dentro de una función async. Internamente, await es como usar .then(), pero con una sintaxis más limpia.
+
+      /*
+      ✅ Ventajas de async/await:
+    ✔ Código más limpio y fácil de leer.
+    ✔ Evita el "callback hell" o anidaciones excesivas de .then().
+    ✔ Manejo de errores con try...catch. (Si queremos)
+    */
+
+      const getDatos2 = () => {
+        //Ahora devolvemos el objeto promise para resolver esto
+
+        //Recibe como parametros dos funciones, una que es resolve y otra reject
+        return new Promise((resolve, reject) => {
+
+            //Esto sería la parte del reject puedo quitarla para que no me de un error
+            if(datos.length !== 0) reject(new Error("Hubo un error"))
+            //También podría haberlo devuelvo así  return Promise.reject(`Error ${valor} no es un número`);
+        
+          //Si todo va bien llamamos a la función resolve y le pasamos datos
+          setTimeout(() => {
+            resolve(datos);
+          }, 2000);
+        });
+      };
+
+      const obtenerDatosAsync = async () => {
+        try {
+          const datosFetched2 = await getDatos2();
+          console.log(datosFetched2);
+        } catch (err) {
+          console.log(err);
+        }
+      };
+
+      obtenerDatosAsync();
+    </script>
+  </body>
+</html>

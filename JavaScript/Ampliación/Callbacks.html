@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Backs</title>
+</head>
+<body>
+    
+    <h1>Call backs en JavaScript</h1>
+
+    <script>
+
+        /*
+        Una función de callback es una función que se pasa a otra función como un argumento, que luego se invoca dentro de la función externa para completar algún tipo de rutina o acción. (Puede ser asíncrono o no)*/
+
+        function modify(array, callback) {
+            
+            //Hacemos algo (Añadimos Daniel al array)
+
+            array.push("Daniel")
+
+            //Después de hacer algo ejecutamos el callback (podría recibir o no parámetros)
+
+            callback(array) //Le paso el parametro array al callback
+        }
+
+        const nombres = ["Asela", "Yako", "Oliver"]
+
+        modify(nombres, (arrayModificado) =>{
+
+            console.log(`He modificado el array`)
+
+            arrayModificado.forEach(element => {
+                console.log(`${element}`)
+            });
+
+        })
+
+        //Casi todo en JavaScript funciona con callbacks
+
+        const callback = nombre => console.log(nombre)
+
+        //Esto de aquí
+        nombres.forEach(element => {
+                console.log(`${element}`)
+            });
+
+        //Es lo mismo que esto
+        nombres.forEach(callback)
+
+        /*
+        DIFERENCIA ENTRE PARAMETRO Y ARGUMENTO
+
+        function prueba(parameter){
+        }
+
+        prueba(argumento)
+        */
+
+
+    </script>
+</body>
+</html>
