@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Symbols</h1>
+
+    <script>
+
+        let id ="Hola"
+        let id2 = "Hola"
+
+        console.log(id === id2) //Esto devolvería true
+
+        //Los symbols crean IDs únicos (referencias únicas), se usan principalmente para crear propiedades privadas de los objetos
+
+        //Se inicializan así, no hay que usar la palabra new
+        let id3 = Symbol()
+        let id4 = Symbol()
+
+        //Podíamos haberle añadido un identificador para el símbolo
+        let id5 = Symbol("id5")
+        console.log(id5)
+        console.log(typeof id5) //Dará symbol, es un dato primitivo
+
+        console.log(id3 === id4) //Esto devolvería false
+
+        //Como los symbols son ids unicos es recomendable crearlo con const
+
+        const NOMBRE = Symbol();
+        const SALUDAR = Symbol();
+
+        const persona = {
+
+             //Java Script sabe que previamente había que tener un símbolo declarado,
+            [NOMBRE]:"Daniel", //Ya estaría construido el símbolo
+            edad:35
+        }
+
+        console.log(persona)
+
+        //Si recorremos con un for of el objeto persona el símbolo no va a imprimirse, por que es una propiedad "privada"
+
+        persona.NOMBRE = "Daniel BS"
+
+        console.log(persona) //Se ha creado una propiedad nombre en persona pero no es la misma que symbol, pero no afecta en nada.
+
+        console.log(persona.NOMBRE) //Imprime Daniel BS
+
+        //Si yo hubiera querido imprimir el symbol tendría que haber hecho:
+
+        console.log(persona[NOMBRE])
+
+        //Puedo también asignar al objeto un symbol de manera externa, en este caso una función
+
+        persona[SALUDAR] = function(){
+            console.log("Hola")
+        }
+
+        console.log(persona) //Ahora tiene dos símbolos
+
+        persona[SALUDAR]() //Esto es para que imprima la función
+
+
+        for(let propiedad in persona){
+            console.log(propiedad) //Esto me imprime el nombre de la propiedad
+            console.log(persona[propiedad]) //Esto me imprime el valor de la propiedad
+
+            //Pero observamos que los símbolos no los imprime
+        }
+
+        //Este método sirve para ver los símbolos de un objeto
+        console.log(Object.getOwnPropertySymbols(persona))
+
+    </script>
+    
+</body>
+</html>

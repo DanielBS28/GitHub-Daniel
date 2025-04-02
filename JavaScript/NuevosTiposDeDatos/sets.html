@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Sets en HTML</h1>
+
+    <script>
+
+        //Los set es un "array" (lo pongo así por que es una estructura de datos parecida a un array pero no es un array) de datos únicos (evita duplicados) con datos primitivos (los objetos tienen una referencia única)
+
+        //Para crearlo se hace así:
+
+        const set = new Set() //Le podría pasar valores iniciales si quiero new Set([1,2,3,3,4,5,true,false,{},{},"hola",Hola])
+
+        const set2 = new Set([1,2,3,3,4,5,true,false,{},{},"hola","Hola"]); //El tres se ha eliminado
+
+        console.log()
+
+        console.log(set2);
+
+        console.log(set.size) //Me devuelve la longitud del set
+
+        //Para añadir valores al set:
+
+        set2.add(7)
+
+        console.log(set2)
+
+        set2.add(3)
+        set2.add(true)
+
+        //No podemos añadir duplicados, vemos que el 3 y el true no los ha añadido
+        console.log(set2)
+
+        //Puedo recorrer los elementos con un for of e imprimirlos
+
+        for (const item of set2) {
+            console.log(item)
+        }
+
+        //También con un for each (solo funciona con arrays y con sets el for each)
+
+        console.log("FOR EACH")
+        set2.forEach(item=>{
+            console.log(item)
+        })
+
+        //Esto no se podría hacer ya que el set no es un array como tal es una estructura
+        console.log(set2[0])
+
+        //Pero podemos convetirlo a un array
+        let arreglo = Array.from((set2))
+        //Esto ya es un array
+        console.log(arreglo)
+        console.log(arreglo[0])
+
+        //Los set tienen un método especial que permiten borrar valores
+
+        set2.delete("Hola")
+        //Ya lo he eliminado
+        console.log(set2)
+
+        //Si no existe no pasará nada
+        set2.delete("Holaaaaa")
+        console.log(set2)
+
+
+        //Para comprobar si existe un valor dentro del set usaremos la función has que devuelve true si existe o false si no existe
+        console.log(set2.has("Hola"))
+        console.log(set2.has(1))
+
+        //Para eliminar todos los datos de un set usaremos el método clear
+        set2.clear()
+        //Ya no hay nada
+        console.log(set2)
+
+        //Los sets son útiles para cuando solo queremos valores únicos, si fuera en un array normal podría haber repetidos y tendría que comprobarlo a mano. 
+
+
+
+    </script>
+</body>
+</html>
