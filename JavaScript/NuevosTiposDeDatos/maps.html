@@ -13,7 +13,9 @@
 
         //Los map son objetos que nos sirven para almacenar conjunto de valores asociados a manera de objeto, es muy parecido a un objeto primitivo, se usa como una colección de datos.
 
-        let mapa = new Map();
+        //Recordemos que los datos que no son primitivos si los podemos poner como const y que vayan cambiando, eso sí no se 
+        //podrá cambiar el tipo de datos
+        const mapa = new Map();
 
         //Son muy parecido a los getters y setters de POO
 
@@ -28,6 +30,59 @@
 
         //Para saber cuantos elementos tiene el mapa hacemos:
         console.log(mapa.size)
+
+        //Para comprobar si un campo (llave) existe podemos usar el método has, si existe deuvelve true, si no existe devuelve false.
+
+        console.log(mapa.has("cumpleaños")) //Devuelve false por que no existe
+        console.log(mapa.has("nombre")) //Devuelve true por que si existe
+
+        //Para obtener el valor de una llave de un mapa usaremos el método get
+
+        console.log(mapa.get("nombre")) //Me devolvería Daniel
+        console.log(mapa.get("cumpleaños")) //Me devolvería undefined ya que no existe
+
+        //Para cambiar un valor del mapa que ya existe, se hace con el método set y el nombre del valor que ya exista.
+
+        mapa.set("nombre","Asela")
+        //Cuando lo volvamos a imprimir ya tendrá el nuevo valor 
+        console.log(mapa.get("nombre"))
+
+        //Para eliminar un atributo del mapa usaremos el método delete
+        mapa.delete("edad")
+        //Ahora el mapa ya no tiene la llave edad
+        console.log(mapa)
+
+        //Los mapas son iterables y los podemos recorrer con un for of (he usado destructuración)
+        for(let [key, value] of mapa){
+            console.log(`Llave: ${key}, valor: ${value}`)
+        }
+
+        //Los mapas a diferencia de los objetos la llave (el atributo en el objeto) lo podemos poner como si fuera
+        //un valor primitivo en vez de solo texto. (No tiene mucho sentido hacerlo)
+
+        mapa.set(19,"diecinueve")
+        mapa.set(false,"Esto es un valor falso")
+        mapa.set({},{})
+
+        console.log(mapa)
+
+        //También puedo inicializar un mapa de esta forma con valores
+
+        const mapa2 = new Map([["Nombre:", "Asela"],["Apellido1","Sánchez"],["Apellido2","Fernández"]])
+
+        console.log(mapa2)
+
+        //Ahora quiero tener guardado en un array solo las claves (keys) y en otro array los valores
+        const keys = [...mapa.keys()]
+        const valores = [...mapa.values()]
+
+        console.log(keys)
+        console.log(valores)
+
+
+
+
+
 
 
 

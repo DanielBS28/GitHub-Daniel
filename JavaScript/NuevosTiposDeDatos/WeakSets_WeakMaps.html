@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>WeakSets & WeakMaps</h1>
+
+    <script>
+
+        //Los sets y los maps tiene una espacie de hermano pequeño que se llama weaksets y weakmaps respectivamente (débiles)
+
+        //No podemos iterar con ellos, tampoco se puede usar el método clear, y tampoco podemos verificar su longitud, son muy utiles para optimizar rendimiento ya que se hace una limpieza de memoria cuando no se usen más.
+
+        /*
+        
+        Los set los podiamos inicializar así, en cambio los WeakSet tenemos que ir uno por uno con el metodo add
+         const set2 = new Set([1,2,3,3,4,5,true,false,{},{},"hola","Hola"]); //El tres se ha eliminado
+
+        */
+
+        const Wk = new WeakSet();
+
+        let objeto1 = {nombre: "Daniel"}
+        let objeto2 = {perro: "Yako"}
+        let objeto3 = {pajaro: "Rey"}
+        let objeto4 = {nombre: "Asela"}
+
+        Wk.add(objeto1);
+        Wk.add(objeto2);
+        Wk.add(objeto3);
+
+        console.log(Wk)
+
+        //Podemos comprobar si existe una referencia denntro del weakset, si existe devuelve true, si no existe devuelve false.
+
+        console.log(Wk.has(objeto1)) //Devuelve true por que si existe en el weakSet
+        console.log(Wk.has(objeto4)) //Devuelve false por que no existe en el weakSet
+
+        //Ahora lo añado el weakSet
+        Wk.add(objeto4);
+
+        console.log(Wk.has(objeto4)) //Devuelve false por que no existe en el weakSet
+        //Lo imprimo para ver que está
+        console.log(Wk)
+
+        //Ahora elimino el objeto1 del WeakSet con el método delete
+        Wk.delete(objeto1);
+
+        //Lo vuelvo a imprimir y ahora ya no está
+        console.log(Wk)
+
+        //Cuando una referencia se vuelve nula o undefined, el WeakSet se elimina esa referencia, vamos a verlo con un set internval y set timeout
+
+        //Voy a comentar esto, pero seria la forma visual de ver lo que he puesto arriba
+
+        /*
+        setInterval(() => {
+            console.log(Wk)
+        }, 1000);
+
+        setTimeout(()=>{
+            objeto1 = null;
+            objeto2 = null;
+            objeto3 = null;
+            objeto4 = null;
+
+        }, 3000);
+        */
+
+        //WEAKMAPS
+
+        //Muy similar a los mapas, permiten clave: valor. No podemos inicializarlos de esta manera ya que si no daría error:
+
+        /*
+        
+        const mapa2 = new WeakMap([["Nombre:", "Asela"],["Apellido1","Sánchez"],["Apellido2","Fernández"]])
+
+        */
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
