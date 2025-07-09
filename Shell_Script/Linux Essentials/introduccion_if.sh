@@ -25,7 +25,7 @@ if [ -e $ruta ]; then
 	#No puse else ya que si no es un directorio asumo que es un fichero pero podría ser otra cosa que no sea un fichero y sería erroneo si
 	#pongo else, con elif compruebo que sea un fichero. Con else sería cualquier cosa que no sea un directorio (y que la ruta existe por el if anterior)
 	echo "La ruta existe y es un fichero"
-	fi #Cierro el if de ruta
+	fi #Cierro el if de -d ruta
 else
 	echo "La ruta no existe"
 fi
