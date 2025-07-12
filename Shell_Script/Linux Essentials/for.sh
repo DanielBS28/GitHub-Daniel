@@ -13,7 +13,7 @@ done
 
 echo -e "\n=== FOR CON LISTA SIN SEQ (MISMO DE ANTES) ===\n"
 
-for i in 5 6 7 8; do
+for i in 5 6 7 8; do #Los elementos de una lista manual, van separados por espacios, observar también el for de nobres
 	echo "Variable i = $i"
 done
 
