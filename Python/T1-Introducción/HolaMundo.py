@@ -1,0 +1,1 @@
+print("¡Hola mundo!") #La instrucción print, imprime por pantalla. 
