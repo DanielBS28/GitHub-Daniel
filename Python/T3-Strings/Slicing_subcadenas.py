@@ -20,7 +20,9 @@ palabra = "PYTHON" #-6P -5Y -4T 3-H -2O -1N
 print(palabra[-1])
 print(palabra[-4:]) #Esto sería desde el indice -4 (incluido) hasta el final de la cadena
 
-print(palabra[::-1]) #Esto le da la vuelta a la string, [::paso] al poner el -1 empieza dando saltos desde el menos 1 hasta el principio (sentido negativo), el salto podría poner el que quiera
-print(palabra[::1]) #El salto es de 1 en uno, se imprime dando saltos de 1 en 1
+print(palabra[::-1]) #Esto le da la vuelta a la string, [::paso] al poner el -1 empieza dando saltos desde el menos 1 hasta el principio (sentido negativo), el salto podría poner el que quiera. Al dejar el inicio y el fin vacíos, le estás diciendo: "Toma todo el texto desde el principio hasta el final, pero recórrelo hacia atrás".
+
+print(palabra[::1]) #El salto es de 1 en uno, se imprime dando saltos de 1 en 1.
+
 print(palabra[::2]) #El salto es de 2 en 2, empezando desde el 0 positivo
 
