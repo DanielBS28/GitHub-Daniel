@@ -5,7 +5,10 @@ import java.util.Scanner;
 public class App_MAIN {
 
 	/*
-	 * Ejercicio Sucursal Bancaria
+	 * 
+	 * PENDIENTE DE HACER, QUIZÁS SERIA BUENA IDEA EN EL FUTURO AMPLIAR EL EJERCICIO CON SUCURSAL 
+	 * 
+	 * Ejercicio Sucursal Bancaria 
 	 * 
 	 * - Se desea realizar una aplicación para manejar las cuentas de una sucursal
 	 * bancaria. En la sucursal habrá: * Clientes y Cuentas que se almacenarán en
@@ -143,10 +146,11 @@ public class App_MAIN {
 
 				if (opcion == ComandosAPP.CREAR_CLIENTE) {
 					
+					System.out.println("Menú cliente");
 
 				} else if (opcion == ComandosAPP.CREAR_CUENTA) {
 					
-					System.out.println("Cuenta creada correctamente");
+					System.out.println("Menú cuenta");
 
 				} else if (opcion == ComandosAPP.MANTENIMIENTO) {
 				    // mantenimiento
@@ -160,6 +164,7 @@ public class App_MAIN {
 
 	public static void main(String[] args) {
 		
+		menuInicial();
 		System.out.println("Saliste de la aplicación");
 
 	}
